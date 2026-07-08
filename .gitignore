@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Build and cache output
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+.turbo/
+.next/
+.nuxt/
+.netlify/
+
+# Generated previews and archives
+preview*.png
+*.zip
+
+# Local working folders not used by this landing page
+buffer_posts/
+netlify-course-landing/
+assets/
+index.rental-backup.html
+salepage-copywriting.md

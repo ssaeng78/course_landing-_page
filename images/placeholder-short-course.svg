@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="ผู้ปฏิบัติเดินจงกรมในลานวัดบรรยากาศเรียบง่าย">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf7"/>
+      <stop offset=".55" stop-color="#eef5ea"/>
+      <stop offset="1" stop-color="#d7e3c9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <path d="M0 500c160-70 302-80 450-26 230 84 415 30 750-96v422H0Z" fill="#e3ead8"/>
+  <path d="M80 650c160-94 350-125 520-90 190 39 346-8 520-105" fill="none" stroke="#c8a25a" stroke-width="34" stroke-linecap="round" opacity=".72"/>
+  <path d="M80 700c180-96 350-115 520-84 188 34 338-3 520-84" fill="none" stroke="#fff7e8" stroke-width="76" stroke-linecap="round" opacity=".88"/>
+  <g opacity=".9">
+    <circle cx="430" cy="410" r="34" fill="#765b42"/>
+    <path d="M384 550c15-72 48-110 98-110s78 39 95 110Z" fill="#fffdf7"/>
+    <path d="M438 552c-6 58-23 94-64 122M488 552c29 42 60 69 112 88" fill="none" stroke="#765b42" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <g opacity=".7">
+    <circle cx="720" cy="338" r="27" fill="#765b42"/>
+    <path d="M682 450c11-55 39-84 78-84s63 29 76 84Z" fill="#fffdf7"/>
+    <path d="M723 452c-4 45-20 75-52 98M765 452c24 35 50 56 92 68" fill="none" stroke="#765b42" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <circle cx="1000" cy="148" r="72" fill="#f3d796" opacity=".55"/>
+  <path d="M122 255c130-92 222-92 352 0M770 245c98-66 166-66 264 0" fill="none" stroke="#7f9f7c" stroke-width="16" stroke-linecap="round" opacity=".42"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="วัด แสงเทียน และดอกบัวในบรรยากาศวันสำคัญทางพระพุทธศาสนา">
+  <defs>
+    <linearGradient id="fest" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff3dc"/>
+      <stop offset=".58" stop-color="#eef5ea"/>
+      <stop offset="1" stop-color="#ead7b2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".34" r=".62">
+      <stop offset="0" stop-color="#f6d48a" stop-opacity=".8"/>
+      <stop offset=".58" stop-color="#f6d48a" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#f6d48a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#fest)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <path d="M120 488h960v78H120Z" fill="#c8a25a" opacity=".58"/>
+  <path d="M222 489 600 198l378 291Z" fill="#765b42"/>
+  <path d="M300 489 600 263l300 226Z" fill="#fffdf7" opacity=".92"/>
+  <rect x="380" y="490" width="440" height="158" fill="#fffdf7" opacity=".95"/>
+  <path d="M440 648V500M600 648V500M760 648V500" stroke="#86a981" stroke-width="20" opacity=".45"/>
+  <g transform="translate(0 12)">
+    <path d="M220 650c40-64 86-64 126 0Z" fill="#fffdf7" opacity=".9"/>
+    <path d="M283 646c-22-40-22-86 0-138 22 52 22 98 0 138Z" fill="#c8a25a"/>
+    <path d="M208 675c58-46 112-46 170 0" fill="none" stroke="#7f9f7c" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(690 30)">
+    <path d="M220 650c40-64 86-64 126 0Z" fill="#fffdf7" opacity=".9"/>
+    <path d="M283 646c-22-40-22-86 0-138 22 52 22 98 0 138Z" fill="#c8a25a"/>
+    <path d="M208 675c58-46 112-46 170 0" fill="none" stroke="#7f9f7c" stroke-width="22" stroke-linecap="round"/>
+  </g>
+</svg>

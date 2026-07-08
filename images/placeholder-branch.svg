@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="ศาลาปฏิบัติธรรมในสาขาท่ามกลางธรรมชาติและบรรยากาศสงบ">
+  <defs>
+    <linearGradient id="branchbg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf7"/>
+      <stop offset=".52" stop-color="#eaf3e5"/>
+      <stop offset="1" stop-color="#d2dfc4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#branchbg)"/>
+  <path d="M0 520c120-85 250-110 390-75 146 36 256 12 384-54 148-76 287-88 426-32v441H0Z" fill="#dce8d0"/>
+  <path d="M95 645c150-70 302-86 455-48 176 43 346 20 555-86" fill="none" stroke="#fff7e8" stroke-width="88" stroke-linecap="round" opacity=".9"/>
+  <path d="M735 450h330v180H735Z" fill="#fffdf7" opacity=".94"/>
+  <path d="M704 450 900 295l196 155Z" fill="#765b42"/>
+  <path d="M764 450 900 344l136 106Z" fill="#c8a25a"/>
+  <path d="M790 630V462M900 630V462M1010 630V462" stroke="#86a981" stroke-width="16" opacity=".48"/>
+  <g opacity=".86">
+    <circle cx="325" cy="485" r="30" fill="#765b42"/>
+    <path d="M280 598c10-56 38-86 85-86s75 30 86 86Z" fill="#fffdf7"/>
+    <circle cx="454" cy="504" r="25" fill="#765b42"/>
+    <path d="M416 602c9-47 32-72 70-72s62 25 72 72Z" fill="#fffdf7"/>
+  </g>
+  <path d="M120 300c120-100 248-100 368 0M50 390c88-66 178-66 266 0" fill="none" stroke="#7f9f7c" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+  <circle cx="1045" cy="155" r="70" fill="#f2d28f" opacity=".5"/>
+</svg>
