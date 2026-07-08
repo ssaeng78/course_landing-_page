@@ -149,10 +149,8 @@
     .top-banner {
       position: relative;
       overflow: hidden;
-      min-height: clamp(220px, 30vw, 360px);
-      display: grid;
-      align-items: center;
-      padding: clamp(24px, 5vw, 54px);
+      display: block;
+      padding: 0;
       border: 10px solid rgba(255, 253, 247, .9);
       border-radius: 3px;
       box-shadow: 0 24px 70px rgba(38, 55, 42, .18);
@@ -160,50 +158,14 @@
     }
 
     .top-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(255, 253, 247, .95), rgba(255, 253, 247, .74) 48%, rgba(255, 253, 247, .2)),
-        linear-gradient(180deg, rgba(79, 111, 82, .05), rgba(79, 111, 82, .18));
-      z-index: -1;
+      display: none;
     }
 
     .top-banner img {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      object-position: center;
-    }
-
-    .top-banner-content {
-      display: grid;
-      gap: 10px;
-      max-width: 760px;
-    }
-
-    .top-banner-content span {
-      width: fit-content;
-      min-height: 34px;
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 12px;
-      border-radius: 999px;
-      color: var(--brown);
-      background: rgba(200, 162, 90, .18);
-      font-size: .9rem;
-      font-weight: 700;
-    }
-
-    .top-banner-content h2 {
-      color: var(--leaf);
-      font-size: clamp(2rem, 5vw, 4.2rem);
-    }
-
-    .top-banner-content p {
-      max-width: 560px;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      position: static;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     .eyebrow {
@@ -940,8 +902,7 @@
       }
 
       .top-banner {
-        min-height: 260px;
-        padding: 22px;
+        padding: 0;
       }
     }
   </style>
@@ -967,12 +928,7 @@
   <section class="top-banner-wrap" aria-label="แบนเนอร์คอร์สปฏิบัติธรรม">
     <div class="container">
       <div class="top-banner">
-        <img src="images/course-9-days.jpeg" alt="บรรยากาศคอร์สปฏิบัติธรรมทั่วไปในศาลาปฏิบัติธรรม">
-        <div class="top-banner-content">
-          <span>สถาบันวิปัสสนาวิชาลัย</span>
-          <h2>คอร์สปฏิบัติธรรมสถาบันวิปัสสนาวิชาลัยวัดมเหยงคณ์</h2>
-          <p>รวมทางเข้าเพื่อเลือกคอร์สปฏิบัติธรรมตามเวลา ประสบการณ์ และรูปแบบการปฏิบัติของท่าน</p>
-        </div>
+        <img src="images/course-main-header.png" alt="คอร์สปฏิบัติธรรมสถาบันวิปัสสนาวิชาลัยวัดมเหยงคณ์">
       </div>
     </div>
   </section>
@@ -1007,11 +963,6 @@
 
     <section id="courses">
       <div class="container">
-        <div class="section-head">
-          <p class="kicker">หมวดคอร์สทั้งหมด</p>
-          <h2>ทางเข้าแต่ละประเภทคอร์ส</h2>
-          <p>เลือกหมวดที่สนใจ แล้วกดปุ่มเพื่อไปยังหน้าเว็บเดิมของคอร์สนั้น</p>
-        </div>
         <div class="course-grid" id="courseGrid"></div>
       </div>
     </section>
@@ -1146,8 +1097,8 @@
       {
         title: "คอร์สกรรมฐานเก้าวัน",
         description: "เหมาะสำหรับผู้ที่ต้องการเข้าปฏิบัติธรรมเข้มข้นจริงจัง อยู่ในบรรยากาศของความเงียบสงบ และมีสติต่อเนื่องตลอด",
-        image: "images/course-9-days-close.jpeg",
-        imageAlt: "ผู้ปฏิบัติธรรมชุดขาวนั่งสมาธิในบรรยากาศสงบสำหรับคอร์สกรรมฐานเก้าวัน",
+        image: "images/course-nine-days-banner.png",
+        imageAlt: "คอร์สกรรมฐานเก้าวันสำหรับผู้ปฏิบัติจริงจัง",
         icon: "lotus",
         groups: [
           {
@@ -1176,8 +1127,8 @@
         items: ["คอร์ส 2 วัน เสาร์-อาทิตย์", "คอร์ส 3 วัน ศุกร์-เสาร์-อาทิตย์", "คอร์ส 4 วัน จันทร์-พฤหัสบดี"],
         button: "ดูรายละเอียดคอร์ส 2-4 วัน",
         url: pageLinks.shortCourse,
-        image: "images/course-short-walking.jpeg",
-        imageAlt: "ผู้ปฏิบัติธรรมชุดขาวเดินจงกรมในพื้นที่ปฏิบัติธรรม",
+        image: "images/course-short-234-banner.png",
+        imageAlt: "คอร์สกรรมฐาน 2-3-4 วัน",
         icon: "calendar"
       },
       {
