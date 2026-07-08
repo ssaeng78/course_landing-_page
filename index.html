@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%234f6f52'/%3E%3Cpath d='M32 49c-11 0-18-6-21-16 9-1 16 2 21 9 5-7 12-10 21-9-3 10-10 16-21 16Z' fill='%23fffdf6'/%3E%3Cpath d='M32 42c-5-7-5-15 0-25 5 10 5 18 0 25Z' fill='%23c9a45a'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #fffdf7;
@@ -33,10 +33,13 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
       margin: 0;
+      width: 100%;
+      overflow-x: hidden;
       background:
         radial-gradient(circle at 18% 12%, rgba(200, 162, 90, .16), transparent 24rem),
         radial-gradient(circle at 82% 18%, rgba(134, 169, 129, .16), transparent 26rem),
@@ -45,7 +48,7 @@
         #eee3cf;
       background-size: auto, auto, 38px 38px, 38px 38px, auto;
       color: var(--text);
-      font-family: "Noto Sans Thai", system-ui, sans-serif;
+      font-family: "Google Sans", "Noto Sans Thai", system-ui, sans-serif;
       line-height: 1.7;
     }
 
@@ -54,6 +57,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    figure {
+      margin: 0;
     }
 
     a {
@@ -231,7 +238,7 @@
 
     h1,
     h2 {
-      font-family: "Noto Serif Thai", serif;
+      font-family: "Google Sans", "Noto Sans Thai", system-ui, sans-serif;
       line-height: 1.18;
       letter-spacing: 0;
     }
@@ -244,6 +251,7 @@
     .photo-strip {
       padding: 0;
       background: transparent;
+      overflow: hidden;
     }
 
     .photo-strip .container {
@@ -260,6 +268,7 @@
       border-radius: 0;
       background: transparent;
       box-shadow: none;
+      contain: paint;
     }
 
     .slider-track {
@@ -274,8 +283,8 @@
       overflow: hidden;
       flex: 0 0 calc(100% / 6);
       margin: 0;
-      aspect-ratio: 1983 / 793;
-      min-height: clamp(230px, 36vw, 430px);
+      aspect-ratio: 1983 / 560;
+      min-height: 0;
       background: transparent;
     }
 
@@ -481,7 +490,7 @@
       right: 2%;
       bottom: -34px;
       color: rgba(122, 91, 66, .09);
-      font-family: "Noto Serif Thai", serif;
+      font-family: "Google Sans", "Noto Sans Thai", system-ui, sans-serif;
       font-size: clamp(4.4rem, 13vw, 10rem);
       font-weight: 700;
       line-height: 1;
@@ -571,7 +580,7 @@
 
     .course-card h3 {
       color: var(--deep);
-      font-family: "Noto Serif Thai", serif;
+      font-family: "Google Sans", "Noto Sans Thai", system-ui, sans-serif;
       font-size: clamp(1.65rem, 3vw, 2.35rem);
       line-height: 1.35;
     }
@@ -900,17 +909,18 @@
       }
 
       .photo-strip .container {
-        width: calc(100% - 28px);
+        width: 100%;
         max-width: none;
       }
 
       .slider-shell {
         width: 100%;
-        border-radius: 4px;
+        border-radius: 0;
       }
 
       .slide {
-        min-height: clamp(260px, 62vw, 360px);
+        min-height: 0;
+        aspect-ratio: 1983 / 700;
       }
 
       .guide-grid {
@@ -1171,24 +1181,31 @@
         icon: "calendar"
       },
       {
-        title: "คอร์สกรรมฐานออนไลน์ คนใหม่",
-        description: "สำหรับผู้เริ่มต้นที่ไม่สะดวกเดินทาง สามารถเรียนรู้แนวทางการปฏิบัติและปฏิบัติธรรมที่บ้านตามกำหนดการอย่างเป็นลำดับ",
-        items: ["เหมาะสำหรับผู้เริ่มต้น", "ปฏิบัติที่บ้านตามตารางที่กำหนด", "เรียนรู้แนวทางเบื้องต้นผ่านระบบออนไลน์"],
-        button: "ดูรายละเอียดคอร์สออนไลน์คนใหม่",
-        url: pageLinks.onlineNew,
+        title: "คอร์สกรรมฐานออนไลน์",
+        description: "สำหรับผู้ที่ไม่สะดวกเดินทาง สามารถปฏิบัติธรรมที่บ้านตามกำหนดการอย่างเป็นลำดับ โดยยังคงบรรยากาศการภาวนาที่สงบและต่อเนื่อง",
         image: "images/course-online.jpeg",
-        imageAlt: "ผู้ปฏิบัติธรรมชุดขาวนั่งสมาธิอย่างสงบสำหรับคอร์สออนไลน์คนใหม่",
-        icon: "online"
-      },
-      {
-        title: "คอร์สกรรมฐานออนไลน์ คนเก่า",
-        description: "สำหรับผู้ที่เคยมีพื้นฐานการปฏิบัติแล้ว และต้องการรักษาความต่อเนื่องของการภาวนาจากที่บ้านอย่างสงบเป็นระบบ",
-        items: ["เหมาะสำหรับผู้ที่เคยผ่านคอร์สหรือมีพื้นฐานแล้ว", "ทบทวนการปฏิบัติจากที่บ้าน", "รักษาความต่อเนื่องของสติในชีวิตประจำวัน"],
-        button: "ดูรายละเอียดคอร์สออนไลน์คนเก่า",
-        url: pageLinks.onlineReturning,
-        image: "images/course-branch.jpeg",
-        imageAlt: "บรรยากาศสงบในพื้นที่ธรรมชาติสำหรับคอร์สออนไลน์คนเก่า",
-        icon: "online"
+        imageAlt: "ผู้ปฏิบัติธรรมชุดขาวนั่งสมาธิอย่างสงบสำหรับคอร์สกรรมฐานออนไลน์",
+        icon: "online",
+        groups: [
+          {
+            title: "คอร์สกรรมฐานออนไลน์คนใหม่",
+            items: [
+              "สำหรับผู้เริ่มต้นหรือผู้ที่ยังไม่เคยเข้าคอร์สออนไลน์มาก่อน",
+              "เรียนรู้แนวทางเบื้องต้นและปฏิบัติที่บ้านตามตารางที่กำหนด"
+            ],
+            button: "ดูรายละเอียดคอร์สออนไลน์คนใหม่",
+            url: pageLinks.onlineNew
+          },
+          {
+            title: "คอร์สกรรมฐานออนไลน์คนเก่า",
+            items: [
+              "สำหรับผู้ที่เคยผ่านคอร์สหรือมีพื้นฐานการปฏิบัติแล้ว",
+              "ทบทวนการปฏิบัติจากที่บ้าน และรักษาความต่อเนื่องของสติในชีวิตประจำวัน"
+            ],
+            button: "ดูรายละเอียดคอร์สออนไลน์คนเก่า",
+            url: pageLinks.onlineReturning
+          }
+        ]
       },
       {
         title: "คอร์สเทศกาล",
