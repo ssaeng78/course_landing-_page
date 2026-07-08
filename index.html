@@ -624,28 +624,31 @@
 
     .guide-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
 
     .guide-card {
-      min-height: 150px;
-      padding: 18px;
+      min-height: 0;
+      padding: 16px 18px;
       border: 1px solid rgba(122, 91, 66, .14);
       border-radius: 8px;
       background: rgba(255, 253, 247, .82);
+      font-family: "Google Sans", "Noto Sans Thai", system-ui, sans-serif;
     }
 
     .guide-card strong {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: var(--brown);
-      line-height: 1.4;
+      font-size: 1rem;
+      line-height: 1.35;
     }
 
     .guide-card span {
       color: var(--muted);
-      font-size: .94rem;
+      font-size: .95rem;
+      line-height: 1.55;
     }
 
     .steps {
@@ -887,6 +890,15 @@
 
       .guide-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .simple-guide {
+        padding: 38px 0;
+      }
+
+      .guide-card {
+        padding: 14px 16px;
       }
 
       .step {
@@ -971,27 +983,31 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker">เลือกคอร์สแบบง่าย</p>
-          <h2>แนวทางสั้น ๆ ก่อนกดดูรายละเอียด</h2>
+          <h2>แนะนำคอร์สตามความพร้อม</h2>
         </div>
         <div class="guide-grid">
           <article class="guide-card">
             <strong>ถ้าเป็นผู้เริ่มต้น</strong>
-            <span>แนะนำคอร์ส 9 วันคนใหม่ หรือคอร์ส 2-4 วัน</span>
+            <span>แนะนำคอร์สสองถึงสี่วัน</span>
           </article>
           <article class="guide-card">
-            <strong>ถ้ามีเวลาจำกัด</strong>
-            <span>แนะนำคอร์ส 2-4 วัน</span>
+            <strong>ถ้ามีเวลาจำกัด ลางานยาว ๆ ไม่ได้</strong>
+            <span>แนะนำคอร์สสองถึงสี่วัน</span>
           </article>
           <article class="guide-card">
-            <strong>ถ้าไม่สะดวกเดินทาง</strong>
-            <span>แนะนำคอร์สกรรมฐานออนไลน์</span>
+            <strong>ถ้าต้องการปฏิบัติจริงจัง</strong>
+            <span>แนะนำคอร์สเก้าวัน (คนเก่าหรือคนใหม่)</span>
           </article>
           <article class="guide-card">
-            <strong>ถ้าอยากปฏิบัติช่วงวันสำคัญ</strong>
+            <strong>ถ้าอยากปฏิบัติธรรมในช่วงวันหยุดเทศกาล</strong>
             <span>แนะนำคอร์สเทศกาล</span>
           </article>
           <article class="guide-card">
-            <strong>ถ้าอยู่ต่างจังหวัด</strong>
+            <strong>ถ้าอยู่ต่างจังหวัดไกล ๆ หรืออยู่ต่างประเทศ</strong>
+            <span>แนะนำคอร์สกรรมฐานออนไลน์ (คนเก่าหรือคนใหม่)</span>
+          </article>
+          <article class="guide-card">
+            <strong>หากอยากสัมผัสบรรยากาศธรรมชาติ</strong>
             <span>แนะนำคอร์สกรรมฐานสาขา</span>
           </article>
         </div>
@@ -1134,8 +1150,8 @@
       {
         title: "คอร์สกรรมฐานออนไลน์",
         description: "สำหรับผู้ที่ไม่สะดวกเดินทาง สามารถปฏิบัติธรรมที่บ้านตามกำหนดการอย่างเป็นลำดับ โดยยังคงบรรยากาศการภาวนาที่สงบและต่อเนื่อง",
-        image: "images/course-online.jpeg",
-        imageAlt: "ผู้ปฏิบัติธรรมชุดขาวนั่งสมาธิอย่างสงบสำหรับคอร์สกรรมฐานออนไลน์",
+        image: "images/course-online-banner.png",
+        imageAlt: "คอร์สกรรมฐานออนไลน์สำหรับปฏิบัติธรรมที่บ้าน",
         icon: "online",
         groups: [
           {
@@ -1174,8 +1190,8 @@
         items: [],
         button: "ดูคอร์สกรรมฐานสาขา",
         url: pageLinks.branch,
-        image: "images/course-branch.jpeg",
-        imageAlt: "ผู้ปฏิบัติธรรมในพื้นที่สาขาที่รายล้อมด้วยธรรมชาติ",
+        image: "images/course-branch-banner.png",
+        imageAlt: "คอร์สปฏิบัติธรรมสำนักสาขาท่ามกลางธรรมชาติ",
         icon: "branch"
       }
     ];
