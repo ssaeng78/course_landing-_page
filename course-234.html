@@ -323,6 +323,148 @@
       font-size: 1rem;
     }
 
+    .course-tabs {
+      background:
+        radial-gradient(circle at 80% 10%, rgba(201, 166, 107, .18), transparent 23rem),
+        var(--ivory);
+    }
+
+    .tab-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: clamp(18px, 4vw, 36px);
+      align-items: start;
+    }
+
+    .tab-visual {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .tab-photo {
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border: 8px solid rgba(251, 248, 241, .9);
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .tab-note {
+      padding: 18px;
+      border: 1px solid rgba(109, 31, 44, .14);
+      border-radius: 10px;
+      background: rgba(251, 248, 241, .82);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .tabs-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .course-accordion {
+      overflow: hidden;
+      border: 1px solid rgba(109, 31, 44, .14);
+      border-radius: 12px;
+      background: rgba(251, 248, 241, .88);
+      box-shadow: var(--shadow);
+    }
+
+    .course-accordion summary {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 22px;
+      color: var(--leaf);
+      font-size: clamp(1.28rem, 3vw, 1.8rem);
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .course-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .course-accordion summary::after {
+      content: "+";
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--leaf);
+      line-height: 1;
+    }
+
+    .course-accordion[open] summary::after {
+      content: "-";
+    }
+
+    .accordion-body {
+      padding: 0 clamp(18px, 3vw, 28px) clamp(22px, 4vw, 34px);
+      color: var(--muted);
+    }
+
+    .accordion-body h3 {
+      margin: 22px 0 8px;
+      color: var(--deep);
+      font-size: 1.22rem;
+      line-height: 1.45;
+    }
+
+    .accordion-body p {
+      margin-top: 10px;
+    }
+
+    .plain-list,
+    .timeline {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li,
+    .timeline li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .plain-list li::before,
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .timeline li strong {
+      color: var(--brown);
+    }
+
+    .important-box {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      color: var(--deep);
+      background: rgba(201, 166, 107, .16);
+      font-weight: 700;
+    }
+
     .register-grid {
       display: grid;
       grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
@@ -407,8 +549,13 @@
     @media (max-width: 860px) {
       .hero-grid,
       .intro-card,
+      .tab-layout,
       .register-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tab-visual {
+        position: static;
       }
 
       .hero {
@@ -527,6 +674,142 @@
             <h3>เป้าหมายของคอร์ส</h3>
             <p>เพื่อให้ผู้สนใจได้ทดลองเข้าปฏิบัติก่อนที่จะเข้าคอร์สกรรมฐานระยะ 9 วัน</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="course-tabs">
+      <div class="container tab-layout">
+        <aside class="tab-visual" aria-label="ภาพประกอบคอร์ส">
+          <figure class="tab-photo">
+            <img src="images/short-234-meditation.JPG" alt="ผู้ปฏิบัติธรรมชุดขาวนั่งสมาธิร่วมกันในลานธรรม">
+          </figure>
+          <div class="tab-note">อ่านข้อตกลงและกำหนดเวลาให้ครบก่อนสมัคร เพื่อให้การเข้าปฏิบัติเป็นไปอย่างเรียบร้อยและเกื้อกูลต่อการเจริญสติ</div>
+          <figure class="tab-photo">
+            <img src="images/short-234-prayer.JPG" alt="ผู้ปฏิบัติธรรมสวดมนต์ในบรรยากาศสงบ">
+          </figure>
+        </aside>
+
+        <div class="tabs-stack">
+          <details class="course-accordion" open>
+            <summary>ข้อตกลงของผู้สมัคร</summary>
+            <div class="accordion-body">
+              <p>รับสมัครเฉพาะผู้มีความตั้งใจจริง ๆ ในการอบรมเจริญสติปัญญาเท่านั้น</p>
+
+              <h3>การเข้าปฏิบัติและการสำรวม</h3>
+              <ul class="plain-list">
+                <li>ผู้สมัครเข้าบวชปฏิบัติจะต้องมาให้ตรงเวลา และอยู่ปฏิบัติจนครบตามเวลาที่ทางวัดกำหนดไว้</li>
+                <li>ผู้ปฏิบัติต้องสำรวมวาจา ไม่พูดคุยกับผู้ปฏิบัติด้วยกันและกับบุคคลภายนอกระหว่างเข้าบวชปฏิบัติ</li>
+                <li>ห้ามใช้เครื่องมือสื่อสารทุกชนิด เช่น โทรศัพท์ แท็บเล็ต ในช่วงที่บวชปฏิบัติ ทางวัดจะมีกระเป๋าเก็บโทรศัพท์และล็อคกุญแจ โดยให้ท่านเก็บรักษากระเป๋าเองตอนลงทะเบียนจนถึงวันลาศีล</li>
+                <li>หากพบว่าไม่ปฏิบัติตามกฎระเบียบ เมื่อตักเตือนและไม่เชื่อฟัง จะขอให้ออกจากการปฏิบัติทันทีและปฏิเสธการรับในครั้งต่อไป</li>
+              </ul>
+
+              <h3>ศีล 8 และข้อควรงดเว้น</h3>
+              <ul class="plain-list">
+                <li>ผู้ปฏิบัติต้องถือศีล 8 เว้นการประดับตกแต่งร่างกายทุกชนิด เช่น แต่งหน้า ทาแป้ง ทาปาก ทาเล็บ</li>
+                <li>ถอดเครื่องประดับทุกชนิด เช่น สร้อย แหวน ต่างหู</li>
+                <li>เครื่องดื่มประเภทไมโล โอวัลติน ไวตามิลค์ และนมทุกชนิด จัดเป็นอาหาร จะต้องไม่รับประทานหลังเวลาเที่ยงวัน 12.00 น. จนถึงรุ่งอรุณของวันใหม่</li>
+                <li>การรับประทานอาหารและดื่มน้ำ ให้นั่งรับประทาน ไม่ยืนดื่มน้ำ</li>
+              </ul>
+
+              <h3>การปฏิบัติในลานธรรม</h3>
+              <p>ผู้ปฏิบัติจะต้องลงสู่ลานธรรมปฏิบัติและแยกกันปฏิบัติตามลำพังตามกำหนดการ โดยเจริญสติอยู่ตลอดเวลา ไม่ควรทำเสียงดังรบกวนสมาธิของผู้ที่กำลังปฏิบัติ เช่น เดินลากรองเท้าให้เกิดเสียงดัง และไม่ควรใช้ถุงพลาสติกที่มีเสียงดัง</p>
+
+              <h3>การแต่งกาย</h3>
+              <ul class="plain-list">
+                <li>สุภาพบุรุษ ใช้ชุดนักบวชเนกขัมมภาวนา หรือสวมเสื้อและกางเกงสุภาพสีขาว ไม่สวมกางเกงขาสั้น ขาสามส่วน และไม่คาดผ้าขาวม้า</li>
+                <li>สุภาพสตรี ใช้ชุดนักบวชเนกขัมมภาวนา ผ้าถุง เสื้อแขนสามส่วน ผ้าสไบสีขาว ถ้าผมยาวควรรวบขึ้นให้เรียบร้อย ถ้าทาสีเล็บต้องล้างออกให้หมด</li>
+              </ul>
+
+              <div class="important-box">ผู้ปฏิบัติหญิงที่มีการเพ้นท์หรือทาสีเล็บ จะต้องล้างออกให้หมดก่อนการเข้าปฏิบัติ ผู้ที่ทำเล็บอะคริลิกต้องถอดออกทั้งหมด เพื่อความบริสุทธิ์ของศีลแปด และเคารพต่อศาสนสถาน</div>
+
+              <h3>การยกเลิกและเงื่อนไขอื่น ๆ</h3>
+              <ul class="plain-list">
+                <li>เมื่อสมัครแล้วไม่สามารถมาเข้าบวชปฏิบัติตามกำหนดได้ ต้องแจ้งยกเลิกให้ทางวัดทราบล่วงหน้าก่อน 3 วัน มิฉะนั้นจะถูกตัดสิทธิ์ในครั้งต่อไป</li>
+                <li>อายุไม่ต่ำกว่า 15 ปี ในวันเข้าคอร์ส</li>
+                <li>ผู้ปฏิบัติสามารถสมัครปฏิบัติต่อเนื่องในคอร์ส 3 วันได้ 2-3 คอร์สติดกัน โดยพี่เลี้ยงจะพิจารณาให้ต่อคอร์สเฉพาะผู้ที่ตั้งใจปฏิบัติและอยู่ในกฎระเบียบเท่านั้น สามารถสมัครไว้ได้ล่วงหน้า</li>
+              </ul>
+
+              <h3>ของใช้ที่ต้องเตรียมมาเอง</h3>
+              <ul class="plain-list">
+                <li>เตรียมเสื้อผ้ามาให้พอผลัดเปลี่ยนสวมใส่ สามารถซักและตากในที่พักตนเองเท่าที่จำเป็น</li>
+                <li>เครื่องใช้ส่วนตัว เช่น สบู่ แชมพู หวี แปรงสีฟัน ยาสีฟัน กระดาษชำระ ร่ม ผ้าห่ม ไฟฉาย นาฬิกาปลุก ยาทากันยุง อุปกรณ์โกนหนวด หน้ากากอนามัย เจลล้างมือ หรือแอลกอฮอล์แบบพกพา</li>
+                <li>ยาประจำตัวสำหรับท่านที่มีโรคประจำตัว</li>
+                <li>ต้องนำผ้าห่มมาเอง ทางวัดไม่มีบริการให้ยืม</li>
+              </ul>
+              <p>ยกเว้นที่นอน เสื่อ หมอน และผ้าพลาสติกรองนั่ง ทางวัดได้จัดเตรียมไว้ให้แล้ว</p>
+
+              <h3>ค่าใช้จ่าย</h3>
+              <p>ผู้เข้าอบรมไม่ต้องเสียค่าสมัคร หรือค่าใช้จ่ายใด ๆ ทั้งสิ้น หากประสงค์จะทำบุญ สามารถบริจาคได้ตามกำลังศรัทธา</p>
+            </div>
+          </details>
+
+          <details class="course-accordion">
+            <summary>กำหนดเวลา</summary>
+            <div class="accordion-body">
+              <h3>วันแรก</h3>
+              <ul class="timeline">
+                <li><strong>07.30-08.30 น.</strong> ลงทะเบียนที่แผนกทะเบียน</li>
+                <li><strong>09.30 น.</strong> ปฐมนิเทศโดยคณะพี่เลี้ยง</li>
+                <li><strong>10.00 น.</strong> พิธีเปิดอบรมกรรมฐาน</li>
+                <li><strong>11.00 น.</strong> รับประทานอาหาร และปฏิบัติธรรมตามอัธยาศัย</li>
+                <li><strong>13.00 น.</strong> เดินจงกรม 40 นาที</li>
+                <li><strong>13.40 น.</strong> นั่งปฏิบัติกรรมฐาน 40 นาที</li>
+                <li><strong>14.30 น.</strong> เดินจงกรม - นั่งภาวนา</li>
+                <li><strong>15.30 น.</strong> กวาดลานวัด ดื่มน้ำปานะ และสรีรกิจ</li>
+                <li><strong>17.00 น.</strong> นั่งเจริญสติรอบสระมุจสินท์</li>
+                <li><strong>18.00 น.</strong> พักเปลี่ยนอิริยาบถ ภารกิจส่วนตัวอย่างรู้สึกตัว</li>
+                <li><strong>18.30 น.</strong> นั่งเจริญสติปัฏฐาน ทำวัตรเย็น</li>
+                <li><strong>20.00 น.</strong> ฟังธรรมบรรยาย</li>
+                <li><strong>21.00 น.</strong> กลับที่พัก เตรียมตัวพักผ่อน นั่งสมาธิและแผ่เมตตาก่อนนอน</li>
+              </ul>
+
+              <h3>วันที่ 2-3 หากไม่ใช่วันปิดคอร์ส</h3>
+              <ul class="timeline">
+                <li><strong>04.00 น.</strong> ตื่นนอน ทำภารกิจส่วนตัว</li>
+                <li><strong>04.30 น.</strong> นั่งเจริญพระกรรมฐานรวม</li>
+                <li><strong>05.00 น.</strong> ทำวัตรเช้า</li>
+                <li><strong>06.00 น.</strong> เดินจงกรมเป็นแถวไปนั่งภาวนารวมตามที่กำหนด</li>
+                <li><strong>06.30 น.</strong> รับประทานอาหารเช้า เสร็จแล้วเชิญตักบาตร ถวายสังฆทาน</li>
+                <li><strong>07.30 น.</strong> ร่วมพิธีถวายภัตตาหารแด่พระสงฆ์ พระสงฆ์อนุโมทนาคาถา กรวดน้ำ รับพร และปฏิบัติธรรมตามอัธยาศัย</li>
+                <li><strong>09.00 น.</strong> เดินจงกรม</li>
+                <li><strong>09.30 น.</strong> นั่งเจริญวิปัสสนา</li>
+                <li><strong>10.00 น.</strong> ฟังธรรมพร้อมเจริญสติ</li>
+                <li><strong>11.00 น.</strong> รับประทานอาหาร และพักอิริยาบถอย่างมีสติ</li>
+                <li><strong>13.00 น.</strong> เดินจงกรม 40 นาที</li>
+                <li><strong>13.40 น.</strong> นั่งปฏิบัติกรรมฐาน 40 นาที</li>
+                <li><strong>14.30 น.</strong> เดินจงกรม นั่งสมาธิ หรือถาม-ตอบปัญหาธรรม</li>
+                <li><strong>15.30 น.</strong> กวาดลานวัด ดื่มน้ำปานะ และสรีรกิจ</li>
+                <li><strong>17.00 น.</strong> นั่งเจริญสติรอบสระมุจสินท์หรือโบราณสถาน ทีมพี่เลี้ยงจะแจ้งให้ทราบ</li>
+                <li><strong>18.00 น.</strong> พักเปลี่ยนอิริยาบถ ภารกิจส่วนตัวอย่างมีสติ</li>
+                <li><strong>18.30 น.</strong> นั่งเจริญสติปัฏฐาน ทำวัตรเย็น</li>
+                <li><strong>20.00 น.</strong> ฟังธรรมบรรยาย</li>
+                <li><strong>21.00 น.</strong> กลับที่พัก เตรียมตัวพักผ่อน นั่งสมาธิและแผ่เมตตาก่อนนอน</li>
+              </ul>
+
+              <h3>วันปิดคอร์ส</h3>
+              <ul class="timeline">
+                <li><strong>04.00 น.</strong> ตื่นนอน ทำภารกิจส่วนตัว</li>
+                <li><strong>04.30 น.</strong> นั่งเจริญพระกรรมฐาน</li>
+                <li><strong>05.00 น.</strong> ทำวัตรเช้า</li>
+                <li><strong>06.00 น.</strong> เดินจงกรมรอบอุโบสถปราสาทฯ และนั่งภาวนา ณ ถ้ำปรินิพพาน</li>
+                <li><strong>06.30 น.</strong> รับประทานอาหารเช้า เสร็จแล้วเชิญตักบาตร ถวายสังฆทาน</li>
+                <li><strong>07.30 น.</strong> ร่วมพิธีถวายภัตตาหารแด่พระสงฆ์ พระสงฆ์อนุโมทนาคาถา กรวดน้ำ รับพร และปฏิบัติธรรมตามอัธยาศัย</li>
+                <li><strong>09.00 น.</strong> เดินจงกรม</li>
+                <li><strong>09.30 น.</strong> นั่งเจริญวิปัสสนา</li>
+                <li><strong>10.00 น.</strong> ฟังธรรมพร้อมเจริญสติ</li>
+                <li><strong>11.00 น.</strong> รับประทานอาหาร และพักอิริยาบถอย่างมีสติ</li>
+                <li><strong>12.30 น.</strong> รับคืนโทรศัพท์ และคืนบัตร</li>
+                <li><strong>13.00 น.</strong> เดินจงกรม 40 นาที</li>
+                <li><strong>13.40 น.</strong> นั่งปฏิบัติกรรมฐาน 40 นาที</li>
+                <li><strong>14.30 น.</strong> พิธีปิดอบรมกรรมฐาน</li>
+                <li><strong>15.30 น.</strong> กิจกรรมไวยาวัจมัย</li>
+                <li><strong>16.30 น.</strong> เดินทางกลับ</li>
+              </ul>
+
+              <div class="important-box">กำหนดการอาจมีการเปลี่ยนแปลง โปรดฟังประกาศจากทีมพี่เลี้ยง</div>
+            </div>
+          </details>
         </div>
       </div>
     </section>

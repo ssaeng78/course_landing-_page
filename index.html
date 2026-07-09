@@ -124,6 +124,13 @@
       display: flex;
       gap: 4px;
       align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
     }
 
     .nav-links a {
@@ -831,8 +838,16 @@
     }
 
     @media (max-width: 940px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 0;
+      }
+
       .nav-links {
-        display: none;
+        width: 100%;
+        padding-bottom: 2px;
       }
 
       .steps {
@@ -987,10 +1002,11 @@
         <span>คอร์สปฏิบัติธรรม</span>
       </a>
       <div class="nav-links">
-        <a href="#courses">หมวดคอร์ส</a>
-        <a href="#guide">เลือกคอร์ส</a>
-        <a href="#steps">วิธีสมัคร</a>
-        <a href="#faq">คำถาม</a>
+        <a href="#top">หน้าแรก</a>
+        <a href="course-234.html">คอร์สสองสามสี่วัน</a>
+        <a href="#course-nine-days">คอร์สเก้าวัน</a>
+        <a href="#course-online">คอร์สออนไลน์</a>
+        <a href="#course-festival">คอร์สเทศกาล</a>
       </div>
     </nav>
   </header>
@@ -1169,6 +1185,7 @@
 
     const courseCategories = [
       {
+        id: "course-nine-days",
         title: "คอร์สกรรมฐานเก้าวัน",
         description: "เหมาะสำหรับผู้ที่ต้องการเข้าปฏิบัติธรรมเข้มข้นจริงจัง อยู่ในบรรยากาศของความเงียบสงบ และมีสติต่อเนื่องตลอด",
         image: "images/course-nine-days-banner.png",
@@ -1194,6 +1211,7 @@
         ]
       },
       {
+        id: "course-short",
         title: "คอร์สปฏิบัติธรรมระยะสั้น 2-4 วัน",
         description: "เหมาะสำหรับผู้ที่มีเวลาจำกัด ต้องการเริ่มต้น ทบทวน หรือใช้ช่วงวันหยุดเพื่อปฏิบัติธรรม",
         items: ["คอร์ส 2 วัน เสาร์-อาทิตย์", "คอร์ส 3 วัน ศุกร์-เสาร์-อาทิตย์", "คอร์ส 4 วัน จันทร์-พฤหัสบดี"],
@@ -1204,6 +1222,7 @@
         icon: "calendar"
       },
       {
+        id: "course-online",
         title: "คอร์สกรรมฐานออนไลน์",
         description: "สำหรับผู้ที่ไม่สะดวกเดินทาง สามารถปฏิบัติธรรมที่บ้านตามกำหนดการอย่างเป็นลำดับ โดยยังคงบรรยากาศการภาวนาที่สงบและต่อเนื่อง",
         image: "images/course-online-banner.png",
@@ -1229,6 +1248,7 @@
         ]
       },
       {
+        id: "course-festival",
         title: "คอร์สเทศกาล",
         description: "คอร์สพิเศษที่จัดขึ้นในช่วงวันสำคัญทางพระพุทธศาสนาและวันสำคัญต่าง ๆ เพื่อให้ผู้สนใจได้ใช้ช่วงเวลาเหล่านี้ในการปฏิบัติธรรม",
         items: ["คอร์สวันปีใหม่", "คอร์สวันวิสาขบูชา", "คอร์สวันมาฆบูชา", "คอร์สวันเฉลิมพระชนมพรรษา", "คอร์สเข้าพรรษา", "คอร์สออกพรรษา", "คอร์สเทศกาลอื่น ๆ"],
@@ -1239,6 +1259,7 @@
         icon: "candle"
       },
       {
+        id: "course-branch",
         title: "คอร์สกรรมฐานสาขา",
         description: "คอร์สปฏิบัติธรรมที่จัดในสาขาหรือสถานที่ต่าง ๆ เพื่อให้ผู้สนใจเข้าถึงการปฏิบัติธรรมได้สะดวกมากขึ้น",
         items: [],
@@ -1304,7 +1325,7 @@
           : "";
         const cardClass = course.groups ? "course-card course-card-combo" : "course-card";
         return `
-          <article class="${cardClass}">
+          <article class="${cardClass}" id="${course.id}">
             <figure class="course-media">
               <img src="${course.image}" alt="${course.imageAlt}">
             </figure>
