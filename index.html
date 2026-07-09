@@ -1150,7 +1150,7 @@
       contact: "#",
       nineDaysNew: "#",
       nineDaysReturning: "#",
-      shortCourse: "https://watmahaeyong.or.th/course/1",
+      shortCourse: "course-234.html",
       onlineNew: "#",
       onlineReturning: "#",
       festival: "#",
@@ -1174,24 +1174,22 @@
         image: "images/course-nine-days-banner.png",
         imageAlt: "คอร์สกรรมฐานเก้าวันสำหรับผู้ปฏิบัติจริงจัง",
         icon: "lotus",
+        button: "ดูรายละเอียดคอร์สกรรมฐานเก้าวัน",
+        url: pageLinks.nineDaysNew,
         groups: [
           {
             title: "คอร์สกรรมฐานเก้าวันคนใหม่",
             items: [
               "สำหรับผู้ที่ยังไม่เคยเข้าคอร์สฯ 7-9 วันมาก่อน หรือเคยเข้ามาแล้วเพียงหนึ่งครั้ง",
               "คอร์สที่วัดมเหยงคณ์, คอร์สสาขา คอร์สออนไลน์ หรือคอร์สที่อื่นๆ ที่หลวงพ่อสุรศักดิ์ เขมรังสี เป็นพระวิปัสสนาจารย์"
-            ],
-            button: "ดูรายละเอียดคอร์สคนใหม่",
-            url: pageLinks.nineDaysNew
+            ]
           },
           {
             title: "คอร์สกรรมฐานเก้าวันคนเก่า",
             items: [
               "สำหรับผู้ที่ยังไม่เคยเข้าคอร์สฯ 7-9 วันมาก่อน หรือเคยเข้ามาแล้วเพียงหนึ่งครั้ง",
               "คอร์สที่วัดมเหยงคณ์, คอร์สสาขา คอร์สออนไลน์ หรือคอร์สที่อื่นๆ ที่หลวงพ่อสุรศักดิ์ เขมรังสี เป็นพระวิปัสสนาจารย์"
-            ],
-            button: "ดูรายละเอียดของคอร์สคนเก่า",
-            url: pageLinks.nineDaysReturning
+            ]
           }
         ]
       },
@@ -1211,24 +1209,22 @@
         image: "images/course-online-banner.png",
         imageAlt: "คอร์สกรรมฐานออนไลน์สำหรับปฏิบัติธรรมที่บ้าน",
         icon: "online",
+        button: "ดูรายละเอียดคอร์สออนไลน์",
+        url: pageLinks.onlineNew,
         groups: [
           {
             title: "คอร์สกรรมฐานออนไลน์คนใหม่",
             items: [
               "สำหรับผู้เริ่มต้นหรือผู้ที่ยังไม่เคยเข้าคอร์สออนไลน์มาก่อน",
               "เรียนรู้แนวทางเบื้องต้นและปฏิบัติที่บ้านตามตารางที่กำหนด"
-            ],
-            button: "ดูรายละเอียดคอร์สออนไลน์คนใหม่",
-            url: pageLinks.onlineNew
+            ]
           },
           {
             title: "คอร์สกรรมฐานออนไลน์คนเก่า",
             items: [
               "สำหรับผู้ที่เคยผ่านคอร์สหรือมีพื้นฐานการปฏิบัติแล้ว",
               "ทบทวนการปฏิบัติจากที่บ้าน และรักษาความต่อเนื่องของสติในชีวิตประจำวัน"
-            ],
-            button: "ดูรายละเอียดคอร์สออนไลน์คนเก่า",
-            url: pageLinks.onlineReturning
+            ]
           }
         ]
       },
@@ -1293,10 +1289,10 @@
               <div class="course-group">
                 <h4>${group.title}</h4>
                 <ul class="soft-list">${group.items.map((item) => `<li>${item}</li>`).join("")}</ul>
-                <a class="btn btn-primary" href="${group.url}">
-                  ${group.button}
-                  <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
+                ${group.button ? `<a class="btn btn-primary" href="${group.url}">
+                    ${group.button}
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>` : ""}
               </div>
             `).join("")}</div>`
           : "";
