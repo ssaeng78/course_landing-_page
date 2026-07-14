@@ -811,44 +811,76 @@
     }
 
     .site-footer {
-      padding: 34px 0;
+      padding: 44px 0;
       color: var(--muted);
       background:
         linear-gradient(90deg, rgba(109, 31, 44, .035) 1px, transparent 1px),
         linear-gradient(180deg, rgba(109, 31, 44, .03) 1px, transparent 1px),
         var(--cream);
       background-size: 72px 72px, 72px 72px, auto;
+      border-top: 1px solid var(--line);
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      align-items: start;
     }
 
-    .footer-inner strong {
-      display: block;
+    .footer-info {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-info strong {
+      font-size: 1.15rem;
       color: var(--deep);
+      margin-bottom: 2px;
     }
 
-    .footer-inner a {
-      color: var(--leaf);
+    .footer-info p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .footer-info .contact-detail {
+      margin-top: 6px;
+      display: grid;
+      gap: 4px;
+      font-size: 0.94rem;
+      color: var(--brown);
       font-weight: 700;
     }
 
-    .line-capsule {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      border-radius: 999px;
-      color: var(--paper);
-      background: var(--leaf);
-      box-shadow: 0 16px 38px -24px rgba(109, 31, 44, .7);
-      text-align: center;
-      font-weight: 800;
+    .footer-menu {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-menu strong {
+      font-size: 1.15rem;
+      color: var(--deep);
+      margin-bottom: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .footer-links a {
+      color: var(--leaf);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.96rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
     }
 
     @media (max-width: 940px) {
@@ -993,7 +1025,8 @@
       }
 
       .footer-inner {
-        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .top-banner-wrap {
@@ -1018,7 +1051,8 @@
       <div class="nav-links">
         <a href="#top">หน้าแรก</a>
         <a href="course-234.html">คอร์สสองสามสี่วัน</a>
-        <a href="#course-nine-days">คอร์สเก้าวัน</a>
+        <a href="course-9days.html">คอร์สเก้าวัน</a>
+        <a href="course-sunday.html">คอร์สวันอาทิตย์</a>
         <a href="#course-online">คอร์สออนไลน์</a>
         <a href="#course-festival">คอร์สเทศกาล</a>
       </div>
@@ -1039,7 +1073,7 @@
         <div class="slider-shell">
           <div class="slider-track">
             <figure class="slide">
-              <img src="images/banner-slide-practice-one-day.png" alt="ปฏิบัติธรรมหนึ่งวัน วันอาทิตย์ที่ 12 กรกฎาคมนี้">
+              <img src="images/course-sunday-banner.jpg" alt="ปฏิบัติธรรมหนึ่งวัน วันอาทิตย์ที่ 12 กรกฎาคมนี้">
             </figure>
             <figure class="slide">
               <img src="images/banner-slide-apply-website.png" alt="สมัครสมาชิกเว็บไซต์วัดมเหยงคณ์เพื่อการสมัครคอร์สปฏิบัติธรรม">
@@ -1048,7 +1082,7 @@
               <img src="images/banner-slide-festival-royal.png" alt="คอร์สเทศกาลวันเฉลิม 28-30 กรกฎาคม">
             </figure>
             <figure class="slide" aria-hidden="true">
-              <img src="images/banner-slide-practice-one-day.png" alt="">
+              <img src="images/course-sunday-banner.jpg" alt="">
             </figure>
             <figure class="slide" aria-hidden="true">
               <img src="images/banner-slide-apply-website.png" alt="">
@@ -1166,12 +1200,24 @@
 
   <footer class="site-footer">
     <div class="footer-inner container">
-      <div>
-        <strong>คอร์สปฏิบัติธรรม</strong>
-        <span>หน้า Landing Page รวมทางเข้าไปยังหน้าเดิมของแต่ละคอร์ส</span>
+      <div class="footer-info">
+        <p>จัดทำโดยสถาบันวิปัสสนาวิชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
+        <div class="contact-detail">
+          <span>เบอร์โทร: 080-907-1543, 081-443-2630</span>
+          <span>LINE ID: <a href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชาลัย)</span>
+        </div>
       </div>
-      <a class="line-capsule" href="https://lin.ee/nsQedve">สอบถามหรือติดตามข่าวสารทาง LINE สถาบันวิปัสสนาวิชาลัย</a>
-      <a class="js-contact" href="#">ติดต่อสอบถาม</a>
+      <div class="footer-menu">
+        <strong>เมนูนำทาง</strong>
+        <nav class="footer-links" aria-label="เมนูท้ายหน้า">
+          <a href="#top">หน้าแรก</a>
+          <a href="course-234.html">คอร์สสองสามสี่วัน</a>
+          <a href="course-9days.html">คอร์สเก้าวัน</a>
+          <a href="course-sunday.html">คอร์สวันอาทิตย์</a>
+          <a href="#course-online">คอร์สออนไลน์</a>
+          <a href="#course-festival">คอร์สเทศกาล</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
@@ -1179,9 +1225,10 @@
     const pageLinks = {
       allCourses: "#courses",
       contact: "#",
-      nineDaysNew: "#",
-      nineDaysReturning: "#",
+      nineDaysNew: "course-9days.html",
+      nineDaysReturning: "course-9days.html",
       shortCourse: "course-234.html",
+      sundayCourse: "course-sunday.html",
       onlineNew: "#",
       onlineReturning: "#",
       festival: "#",
@@ -1203,7 +1250,7 @@
         id: "course-nine-days",
         title: "คอร์สกรรมฐานเก้าวัน",
         description: "เหมาะสำหรับผู้ที่ต้องการเข้าปฏิบัติธรรมเข้มข้นจริงจัง อยู่ในบรรยากาศของความเงียบสงบ และมีสติต่อเนื่องตลอด",
-        image: "images/course-nine-days-banner.png",
+        image: "images/course-nine-days-banner.jpg",
         imageAlt: "คอร์สกรรมฐานเก้าวันสำหรับผู้ปฏิบัติจริงจัง",
         icon: "lotus",
         button: "ดูรายละเอียดคอร์สกรรมฐานเก้าวัน",
@@ -1234,6 +1281,17 @@
         url: pageLinks.shortCourse,
         image: "images/course-short-234-banner.png",
         imageAlt: "คอร์สกรรมฐาน 2-3-4 วัน",
+        icon: "calendar"
+      },
+      {
+        id: "course-sunday",
+        title: "ปฏิบัติธรรมวันอาทิตย์ (1 วัน)",
+        description: "คอร์สระยะสั้น 1 วัน (เดือนละครั้ง) สะดวก สบาย ไม่ต้องสมัครล่วงหน้า เหมาะสำหรับครอบครัวและผู้เริ่มต้น",
+        items: ["จัดกิจกรรมวันอาทิตย์ เดือนละ 1 ครั้ง", "ไม่ต้องสมัครล่วงหน้า ลงทะเบียนหน้างานฟรี", "มีบริการอาหารและโรงทานฟรี เช้า-กลางวัน"],
+        button: "ดูรายละเอียดคอร์สวันอาทิตย์",
+        url: pageLinks.sundayCourse,
+        image: "images/course-sunday-banner.jpg",
+        imageAlt: "คอร์สปฏิบัติธรรมวันอาทิตย์ วัดมเหยงคณ์",
         icon: "calendar"
       },
       {
