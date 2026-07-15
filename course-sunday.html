@@ -962,40 +962,41 @@
     }
 
     .social-btn {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      color: var(--white);
-      background: var(--leaf);
+      color: var(--white) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .social-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
     }
 
     .social-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.1);
     }
 
-    .social-btn.line:hover {
+    .social-btn.line {
       background: #06C755;
     }
 
-    .social-btn.facebook:hover {
+    .social-btn.facebook {
       background: #1877F2;
     }
 
-    .social-btn.youtube:hover {
+    .social-btn.youtube {
       background: #FF0000;
     }
 
-    .social-btn.tiktok:hover {
-      background: #000000;
+    .social-btn.tiktok {
+      background: #111111;
     }
 
     @media (max-width: 940px) {
