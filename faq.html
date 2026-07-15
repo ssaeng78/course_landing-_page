@@ -228,7 +228,8 @@
       transition: transform 0.2s ease;
     }
 
-    .dropdown:hover .dropdown-arrow {
+    .dropdown:hover .dropdown-arrow,
+    .dropdown.open .dropdown-arrow {
       transform: rotate(180deg);
     }
 
@@ -262,7 +263,8 @@
       filter: drop-shadow(0 -1px 0 var(--line));
     }
 
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover .dropdown-menu,
+    .dropdown.open .dropdown-menu {
       visibility: visible;
       opacity: 1;
       transform: translateX(-50%) translateY(0);
@@ -1005,7 +1007,7 @@
 
   <!-- Inline Script for dynamic search filtering -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+
       const searchInput = document.getElementById('faq-search');
       const accordions = document.querySelectorAll('.course-accordion');
       const categories = document.querySelectorAll('.category-group');
@@ -1139,7 +1141,21 @@
         const observer = new MutationObserver(updateIndicator);
         observer.observe(navLinks, { childList: true, subtree: true });
       }
-    });
+
+      // Dropdown toggle logic
+      document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const parent = this.parentElement;
+          parent.classList.toggle('open');
+        });
+      });
+
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown').forEach(d => {
+          d.classList.remove('open');
+        });
+      });
   </script>
 
 </body>

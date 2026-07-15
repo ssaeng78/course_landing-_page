@@ -1578,45 +1578,43 @@
     </div>
   </footer>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Nav scroll indicator logic
-      const wrapper = document.querySelector('.nav-links-wrapper');
-      const navLinks = document.querySelector('.nav-links');
-      const indicator = document.querySelector('.nav-scroll-indicator');
+    // Nav scroll indicator logic
+    const wrapper = document.querySelector('.nav-links-wrapper');
+    const navLinks = document.querySelector('.nav-links');
+    const indicator = document.querySelector('.nav-scroll-indicator');
 
-      if (wrapper && navLinks && indicator) {
-        const updateIndicator = () => {
-          const isScrollable = navLinks.scrollWidth > navLinks.clientWidth;
-          const isAtEnd = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 8;
-          
-          if (isScrollable && !isAtEnd) {
-            wrapper.classList.add('is-scrollable');
-          } else {
-            wrapper.classList.remove('is-scrollable');
-          }
-        };
-
-        updateIndicator();
-        window.addEventListener('resize', updateIndicator);
-        navLinks.addEventListener('scroll', updateIndicator);
+    if (wrapper && navLinks && indicator) {
+      const updateIndicator = () => {
+        const isScrollable = navLinks.scrollWidth > navLinks.clientWidth;
+        const isAtEnd = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 8;
         
-        const observer = new MutationObserver(updateIndicator);
-        observer.observe(navLinks, { childList: true, subtree: true });
-      }
+        if (isScrollable && !isAtEnd) {
+          wrapper.classList.add('is-scrollable');
+        } else {
+          wrapper.classList.remove('is-scrollable');
+        }
+      };
 
-      // Dropdown toggle logic
-      document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const parent = this.parentElement;
-          parent.classList.toggle('open');
-        });
+      updateIndicator();
+      window.addEventListener('resize', updateIndicator);
+      navLinks.addEventListener('scroll', updateIndicator);
+      
+      const observer = new MutationObserver(updateIndicator);
+      observer.observe(navLinks, { childList: true, subtree: true });
+    }
+
+    // Dropdown toggle logic
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const parent = this.parentElement;
+        parent.classList.toggle('open');
       });
+    });
 
-      document.addEventListener('click', function() {
-        document.querySelectorAll('.dropdown').forEach(d => {
-          d.classList.remove('open');
-        });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('open');
       });
     });
   </script>
