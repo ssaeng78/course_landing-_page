@@ -1019,26 +1019,18 @@
 
       .nav-links-wrapper {
         width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        display: flex;
+        justify-content: flex-start;
       }
 
       .nav-links {
         width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
+        overflow: visible;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
         padding-bottom: 2px;
-      }
-
-      .dropdown {
-        display: contents;
-      }
-
-      .dropdown-trigger {
-        display: none;
-      }
-
-      .dropdown-menu {
-        display: contents;
       }
 
       .eyebrow {
