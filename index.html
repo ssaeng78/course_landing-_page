@@ -417,7 +417,7 @@
       border-radius: 20px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 480px;
+      min-height: 420px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -494,6 +494,21 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: none;
+    }
+
+    .course-card .soft-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 4px;
+    }
+
+    .course-card .soft-list li {
+      align-items: center;
+    }
+
+    .course-card .soft-list li::before {
+      margin-top: 0;
     }
 
     .course-card h3 {
