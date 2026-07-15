@@ -155,10 +155,18 @@
     .top-banner-clean {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 1983 / 793;
+      max-width: 680px;
+      margin: 0 auto;
       border-radius: 16px;
       box-shadow: var(--shadow);
       background: var(--deep);
+    }
+
+    .top-banner-clean img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     .hero-description {
