@@ -115,7 +115,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      overflow: hidden;
+      overflow: visible;
       flex: 1;
       justify-content: flex-end;
       max-width: 100%;
@@ -125,8 +125,7 @@
       display: flex;
       gap: 4px;
       align-items: center;
-      overflow-x: auto;
-      scrollbar-width: none;
+      overflow: visible;
       white-space: nowrap;
       width: 100%;
       padding-right: 32px;
@@ -1004,10 +1003,13 @@
 
       .nav-links-wrapper {
         width: 100%;
+        overflow: hidden;
       }
 
       .nav-links {
         width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
         padding-bottom: 2px;
       }
 
