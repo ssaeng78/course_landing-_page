@@ -111,6 +111,16 @@
       fill: currentColor;
     }
 
+    .nav-links-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      flex: 1;
+      justify-content: flex-end;
+      max-width: 100%;
+    }
+
     .nav-links {
       display: flex;
       gap: 4px;
@@ -118,10 +128,52 @@
       overflow-x: auto;
       scrollbar-width: none;
       white-space: nowrap;
+      width: 100%;
+      padding-right: 32px;
     }
 
     .nav-links::-webkit-scrollbar {
       display: none;
+    }
+
+    .nav-scroll-indicator {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 253, 247, 0.95);
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: grid;
+      place-items: center;
+      color: var(--leaf);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 2;
+    }
+
+    .nav-scroll-indicator svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-links-wrapper.is-scrollable .nav-scroll-indicator {
+      opacity: 0.85;
+      animation: nav-bounce 1.6s infinite alternate;
+    }
+
+    @keyframes nav-bounce {
+      0% { transform: translateY(-50%) translateX(0); }
+      100% { transform: translateY(-50%) translateX(-4px); }
     }
 
     .nav-links a {
@@ -792,6 +844,10 @@
         padding: 12px 0;
       }
 
+      .nav-links-wrapper {
+        width: 100%;
+      }
+
       .nav-links {
         width: 100%;
         padding-bottom: 2px;
@@ -976,16 +1032,21 @@
         </span>
         <span style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25;">
           <span style="font-size: 1.15rem; font-weight: 700; color: var(--leaf);">คอร์สปฏิบัติธรรม</span>
-          <span style="font-size: 0.72rem; font-weight: 500; opacity: 0.8; font-family: 'Sarabun', sans-serif;">สถาบันวิปัสสนาวิชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</span>
+          <span style="font-size: 0.72rem; font-weight: 500; opacity: 0.8; font-family: 'Sarabun', sans-serif;">สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</span>
         </span>
       </a>
-      <div class="nav-links">
-        <a href="index.html">หน้าแรก</a>
-        <a href="course-234.html" class="active">คอร์สสองสามสี่วัน</a>
-        <a href="course-9days.html">คอร์สเก้าวัน</a>
-        <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
-        <a href="course-online.html">คอร์สออนไลน์</a>
-        <a href="faq.html">คำถามที่พบบ่อย</a>
+      <div class="nav-links-wrapper">
+        <div class="nav-links">
+          <a href="index.html">หน้าแรก</a>
+          <a href="course-234.html" class="active">คอร์สสองสามสี่วัน</a>
+          <a href="course-9days.html">คอร์สเก้าวัน</a>
+          <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
+          <a href="course-online.html">คอร์สออนไลน์</a>
+          <a href="faq.html">คำถามที่พบบ่อย</a>
+        </div>
+        <div class="nav-scroll-indicator" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
       </div>
     </nav>
   </header>
@@ -1302,10 +1363,10 @@
   <footer class="site-footer">
     <div class="footer-inner container">
       <div class="footer-info">
-        <p>จัดทำโดยสถาบันวิปัสสนาวิชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
+        <p>จัดทำโดยสถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
         <div class="contact-detail">
           <span>เบอร์โทร: 080-907-1543, 081-443-2630</span>
-          <span>LINE ID: <a href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชาลัย)</span>
+          <span>LINE ID: <a href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชชาลัย)</span>
         </div>
       </div>
       <div class="footer-menu">
@@ -1315,11 +1376,40 @@
           <a href="course-234.html">คอร์สสองสามสี่วัน</a>
           <a href="course-9days.html">คอร์สเก้าวัน</a>
           <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
-          <a href="index.html#course-online">คอร์สออนไลน์</a>
+          <a href="course-online.html">คอร์สออนไลน์</a>
+          <a href="faq.html">คำถามที่พบบ่อย</a>
           <a href="index.html#course-festival">คอร์สเทศกาล</a>
         </nav>
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Nav scroll indicator logic
+      const wrapper = document.querySelector('.nav-links-wrapper');
+      const navLinks = document.querySelector('.nav-links');
+      const indicator = document.querySelector('.nav-scroll-indicator');
+
+      if (wrapper && navLinks && indicator) {
+        const updateIndicator = () => {
+          const isScrollable = navLinks.scrollWidth > navLinks.clientWidth;
+          const isAtEnd = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 8;
+          
+          if (isScrollable && !isAtEnd) {
+            wrapper.classList.add('is-scrollable');
+          } else {
+            wrapper.classList.remove('is-scrollable');
+          }
+        };
+
+        updateIndicator();
+        window.addEventListener('resize', updateIndicator);
+        navLinks.addEventListener('scroll', updateIndicator);
+        
+        const observer = new MutationObserver(updateIndicator);
+        observer.observe(navLinks, { childList: true, subtree: true });
+      }
+    });
+  </script>
 </body>
 </html>

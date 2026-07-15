@@ -101,6 +101,16 @@
       fill: currentColor;
     }
 
+    .nav-links-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      flex: 1;
+      justify-content: flex-end;
+      max-width: 100%;
+    }
+
     .nav-links {
       display: flex;
       gap: 4px;
@@ -108,10 +118,52 @@
       overflow-x: auto;
       scrollbar-width: none;
       white-space: nowrap;
+      width: 100%;
+      padding-right: 32px;
     }
 
     .nav-links::-webkit-scrollbar {
       display: none;
+    }
+
+    .nav-scroll-indicator {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 253, 247, 0.95);
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: grid;
+      place-items: center;
+      color: var(--leaf);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 2;
+    }
+
+    .nav-scroll-indicator svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-links-wrapper.is-scrollable .nav-scroll-indicator {
+      opacity: 0.85;
+      animation: nav-bounce 1.6s infinite alternate;
+    }
+
+    @keyframes nav-bounce {
+      0% { transform: translateY(-50%) translateX(0); }
+      100% { transform: translateY(-50%) translateX(-4px); }
     }
 
     .nav-links a {
@@ -362,17 +414,76 @@
 
     /* Footer styling */
     .site-footer {
+      padding: 44px 0;
+      color: var(--muted);
+      background:
+        linear-gradient(90deg, rgba(109, 31, 44, .035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(109, 31, 44, .03) 1px, transparent 1px),
+        var(--cream);
+      background-size: 72px 72px, 72px 72px, auto;
       border-top: 1px solid var(--line);
-      background: var(--deep);
-      color: var(--ivory);
-      padding: 40px 0;
-      text-align: center;
-      font-size: .95rem;
     }
 
-    .site-footer p {
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .footer-info {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-info p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
       margin: 0;
-      opacity: .8;
+    }
+
+    .footer-info .contact-detail {
+      margin-top: 6px;
+      display: grid;
+      gap: 4px;
+      font-size: 0.94rem;
+      color: var(--brown);
+      font-weight: 700;
+    }
+
+    .footer-info .contact-detail a {
+      color: var(--leaf);
+      text-decoration: underline;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-menu strong {
+      font-size: 1.15rem;
+      color: var(--deep);
+      margin-bottom: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .footer-links a {
+      color: var(--leaf);
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 0.96rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
     }
 
     /* Responsive */
@@ -383,9 +494,18 @@
         gap: 16px;
       }
 
+      .nav-links-wrapper {
+        width: 100%;
+      }
+
       .nav-links {
         width: 100%;
         padding-bottom: 8px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
     }
   </style>
@@ -401,15 +521,21 @@
         </span>
         <span style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25;">
           <span style="font-size: 1.15rem; font-weight: 700; color: var(--leaf);">คอร์สปฏิบัติธรรม</span>
-          <span style="font-size: 0.72rem; font-weight: 500; opacity: 0.8; font-family: 'Sarabun', sans-serif;">สถาบันวิปัสสนาวิชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</span>
+          <span style="font-size: 0.72rem; font-weight: 500; opacity: 0.8; font-family: 'Sarabun', sans-serif;">สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</span>
         </span>
       </a>
-      <div class="nav-links">
-        <a href="index.html">หน้าแรก</a>
-        <a href="course-234.html">คอร์สสองสามสี่วัน</a>
-        <a href="course-9days.html">คอร์สเก้าวัน</a>
-        <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
-        <a href="faq.html" class="active">คำถามที่พบบ่อย</a>
+      <div class="nav-links-wrapper">
+        <div class="nav-links">
+          <a href="index.html">หน้าแรก</a>
+          <a href="course-234.html">คอร์สสองสามสี่วัน</a>
+          <a href="course-9days.html">คอร์สเก้าวัน</a>
+          <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
+          <a href="course-online.html">คอร์สออนไลน์</a>
+          <a href="faq.html" class="active">คำถามที่พบบ่อย</a>
+        </div>
+        <div class="nav-scroll-indicator" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
       </div>
     </nav>
   </header>
@@ -669,9 +795,26 @@
 
   <!-- site footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>จัดทำโดยสถาบันวิปัสสนาวิชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
-      <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.6;">© 2026 วัดมเหยงคณ์. All Rights Reserved.</p>
+    <div class="footer-inner container">
+      <div class="footer-info">
+        <p>จัดทำโดยสถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
+        <div class="contact-detail">
+          <span>เบอร์โทร: 080-907-1543, 081-443-2630</span>
+          <span>LINE ID: <a href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชชาลัย)</span>
+        </div>
+      </div>
+      <div class="footer-menu">
+        <strong>เมนูนำทาง</strong>
+        <nav class="footer-links" aria-label="เมนูท้ายหน้า">
+          <a href="index.html">หน้าแรก</a>
+          <a href="course-234.html">คอร์สสองสามสี่วัน</a>
+          <a href="course-9days.html">คอร์สเก้าวัน</a>
+          <a href="course-sunday.html">ปฏิบัติธรรมวันอาทิตย์</a>
+          <a href="course-online.html">คอร์สออนไลน์</a>
+          <a href="faq.html">คำถามที่พบบ่อย</a>
+          <a href="index.html#course-festival">คอร์สเทศกาล</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
@@ -785,6 +928,31 @@
             traverseTextNodes(node.childNodes[i], callback);
           }
         }
+      }
+
+      // Nav scroll indicator logic
+      const wrapper = document.querySelector('.nav-links-wrapper');
+      const navLinks = document.querySelector('.nav-links');
+      const indicator = document.querySelector('.nav-scroll-indicator');
+
+      if (wrapper && navLinks && indicator) {
+        const updateIndicator = () => {
+          const isScrollable = navLinks.scrollWidth > navLinks.clientWidth;
+          const isAtEnd = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 8;
+          
+          if (isScrollable && !isAtEnd) {
+            wrapper.classList.add('is-scrollable');
+          } else {
+            wrapper.classList.remove('is-scrollable');
+          }
+        };
+
+        updateIndicator();
+        window.addEventListener('resize', updateIndicator);
+        navLinks.addEventListener('scroll', updateIndicator);
+        
+        const observer = new MutationObserver(updateIndicator);
+        observer.observe(navLinks, { childList: true, subtree: true });
       }
     });
   </script>
