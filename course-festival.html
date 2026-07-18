@@ -1193,13 +1193,15 @@
           <div style="margin-bottom: 24px; text-align: center;">
             <p class="eyebrow">กำหนดการประจำปี ๒๕๖๙</p>
             <h2 id="schedule-table-title" style="color: var(--leaf); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-top: 4px;">ตารางกำหนดการอบรมวิปัสสนากรรมฐานคอร์สเทศกาล</h2>
-            <p style="color: var(--muted); margin-top: 6px; font-size: 1.02rem; font-weight: 600;">วันสำคัญของชาติ ศาสนา พระมหากษัตริย์ และวันประเพณีไทย</p>
+            <p style="color: var(--muted); margin-top: 6px; font-size: 1.02rem; font-weight: 600; margin-bottom: 0;">วันสำคัญของชาติ ศาสนา พระมหากษัตริย์ และวันประเพณีไทย</p>
+            <p class="scroll-hint" style="color: var(--muted); margin-top: 8px; font-size: 0.85rem; font-weight: 700; display: none;">(ปัดเลื่อนซ้าย-ขวา เพื่อดูตารางกำหนดการทั้งหมด)</p>
           </div>
 
           <style>
             .schedule-text-table-wrap {
               width: 100%;
               overflow-x: auto;
+              -webkit-overflow-scrolling: touch;
               border-radius: 8px;
               box-shadow: 0 4px 12px rgba(0,0,0,0.04);
               background: #fff;
@@ -1207,9 +1209,12 @@
             }
             .schedule-text-table {
               width: 100%;
+              min-width: 650px;
               border-collapse: collapse;
               text-align: left;
               font-size: 0.98rem;
+              margin: 0;
+              padding: 0;
             }
             .schedule-text-table th {
               background-color: var(--leaf);
@@ -1229,11 +1234,30 @@
             .schedule-text-table tr:nth-child(even) {
               background-color: rgba(251, 248, 241, 0.4);
             }
+            
+            /* กำหนดความกว้างคอลัมน์เพื่อไม่ให้ข้อความบีบตัวจนตกหล่น */
+            .schedule-text-table th:nth-child(1),
+            .schedule-text-table td:nth-child(1) {
+              width: 60px;
+              min-width: 60px;
+              text-align: center;
+            }
+            .schedule-text-table th:nth-child(2),
+            .schedule-text-table td:nth-child(2) {
+              min-width: 220px;
+            }
+            .schedule-text-table th:nth-child(3),
+            .schedule-text-table td:nth-child(3) {
+              min-width: 175px;
+            }
+            .schedule-text-table th:nth-child(4),
+            .schedule-text-table td:nth-child(4) {
+              min-width: 175px;
+            }
+
             .schedule-text-table td.col-num {
               font-weight: 700;
               color: var(--leaf);
-              text-align: center;
-              width: 60px;
             }
             .schedule-text-table td.col-title {
               font-weight: 700;
@@ -1253,12 +1277,18 @@
               font-weight: 500;
             }
             @media (max-width: 768px) {
+              .scroll-hint {
+                display: block !important;
+              }
+              .rounds-container {
+                padding: 18px 10px !important;
+              }
               .schedule-text-table th, .schedule-text-table td {
-                padding: 10px 12px;
+                padding: 12px 10px;
                 font-size: 0.9rem;
               }
               .schedule-text-table td.col-date {
-                font-size: 0.98rem;
+                font-size: 0.96rem;
               }
               .schedule-text-table td .sub-date {
                 font-size: 0.82rem;
