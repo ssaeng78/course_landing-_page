@@ -496,6 +496,37 @@
       margin: 0 0 -4px;
     }
 
+    /* Highlighted schedule column for red background with white text */
+    .schedule-column.highlighted-section {
+      background: var(--leaf);
+      color: #ffffff;
+      padding: clamp(18px, 3vw, 24px);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(109, 31, 44, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .schedule-column.highlighted-section h3 {
+      color: #ffffff;
+      font-size: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 10px;
+      margin-bottom: 4px;
+    }
+    .schedule-column.highlighted-section .schedule-item {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background 0.2s ease;
+    }
+    .schedule-column.highlighted-section .schedule-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .schedule-column.highlighted-section .note {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
     .intro-card h2,
     .section-head h2 {
       color: var(--leaf);
@@ -1264,8 +1295,8 @@
             <li>ปฏิบัติและพักตามตารางเวลาที่กำหนด</li>
           </ol>
         </div>
-        <div class="schedule-column">
-          <h3>คอร์สมีทุกสัปดาห์</h3>
+        <div class="schedule-column highlighted-section">
+          <h3>คอร์สมีทุกสัปดาห์ตลอดทั้งปี</h3>
           <div class="schedule-list" aria-label="รอบคอร์ส">
             <div class="schedule-item">เข้าทุกวันจันทร์ ออกทุกวันพฤหัสบดี</div>
             <div class="schedule-item">เข้าทุกวันศุกร์ ออกวันอาทิตย์</div>
