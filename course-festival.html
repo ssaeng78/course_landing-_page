@@ -420,6 +420,98 @@
       transform: translateY(-2px);
     }
 
+    .signup-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: clamp(22px, 4vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(251, 248, 241, .84);
+      box-shadow: var(--shadow);
+    }
+
+    .schedule-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    .schedule-column h3 {
+      color: var(--deep);
+      font-size: 1.14rem;
+      font-weight: 800;
+      margin: 0 0 -4px;
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .schedule-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(109, 31, 44, .13);
+      border-radius: 8px;
+      background: rgba(248, 244, 236, .78);
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .schedule-intro {
+      margin: 0;
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .signup-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn-signup-orange {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 2px solid #e65100;
+      border-radius: 999px;
+      background: #ff9800;
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255, 152, 0, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-signup-orange:hover {
+      color: #1a1a1a;
+      background: #fb8c00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 152, 0, 0.45);
+    }
+
+    .btn-signup-cream {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 1px solid rgba(109, 31, 44, .18);
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
     section {
       padding: clamp(44px, 7vw, 78px) 0;
     }
@@ -1403,6 +1495,29 @@
         </div>
       </div>
     </section>
+
+    <section style="padding-top: 0; padding-bottom: 24px;">
+      <div class="container">
+        <div class="signup-section">
+          <div class="schedule-column">
+            <h3>ขั้นตอนการสมัคร</h3>
+            <p class="schedule-intro">อ่านระเบียบการและเงื่อนไขให้เรียบร้อยก่อนกรอกใบสมัคร</p>
+            <div class="schedule-list" aria-label="ขั้นตอนการสมัคร">
+              <div class="schedule-item">1. สมัครเป็นสมาชิกของเว็บ "วัดมเหยงคณ์" (สำหรับผู้ที่ยังไม่เคยสมัคร หากท่านเคยสมัครแล้ว ข้ามไปที่ข้อ 2)</div>
+              <div class="schedule-item">2. เลือกคอร์สเทศกาลที่ต้องการสมัครจากด้านล่าง</div>
+            </div>
+            <div class="signup-actions">
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">
+                1. สมัครเป็นสมาชิกเว็บไซต์
+              </a>
+              <div class="btn-signup-cream" aria-hidden="true">
+                เลือกคอร์สฯเทศกาล ที่ต้องการสมัครจากด้านล่าง
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ภาพประชาสัมพันธ์คอร์สเทศกาล -->
     <section class="festival-banners-section" aria-labelledby="festival-banners-title" style="padding-top: 10px; padding-bottom: 34px;">
       <div class="container">
@@ -1410,7 +1525,6 @@
           <div style="margin-bottom: 28px; text-align: center;">
             <p class="eyebrow">ป้ายประชาสัมพันธ์</p>
             <h2 id="festival-banners-title" style="color: var(--leaf); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-top: 4px;">คอร์สเทศกาลต่างๆ</h2>
-            <p style="color: var(--muted); margin-top: 6px; font-size: 1.02rem; font-weight: 600;">กดที่รูปคอร์สที่ต้องการสมัคร<br>เพื่อไปยังหน้าการสมัคร ของแต่ละคอร์สฯ</p>
           </div>
           
           <style>
