@@ -393,15 +393,15 @@
 
     .slider-track {
       display: flex;
-      width: 600%;
-      animation: banner-marquee 28s linear infinite;
+      width: 100%;
+      transition: transform 0.6s ease;
       will-change: transform;
     }
 
     .slide {
       position: relative;
       overflow: hidden;
-      flex: 0 0 calc(100% / 6);
+      flex: 0 0 100%;
       margin: 0;
       aspect-ratio: 1983 / 793;
       min-height: 0;
@@ -417,25 +417,29 @@
       pointer-events: none;
     }
 
+    .slide a {
+      display: block;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .slide a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: -2px;
+    }
+
     .slide img {
       object-fit: cover;
       object-position: center;
       transform: scale(1.002);
     }
 
-    @keyframes banner-marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
     @media (prefers-reduced-motion: reduce) {
       .slider-track {
-        animation: none;
+        transition: none;
       }
     }
 
@@ -1260,22 +1264,19 @@
         <div class="slider-shell">
           <div class="slider-track">
             <figure class="slide">
-              <img src="images/banner-slide-practice-one-day.png?v=2" alt="ปฏิบัติธรรมหนึ่งวัน ปฏิบัติธรรมวันอาทิตย์ วัดมเหยงคณ์">
+              <a href="course-sunday.html" aria-label="ดูรายละเอียดปฏิบัติธรรมวันอาทิตย์">
+                <img src="images/banner-slide-practice-one-day.png?v=2" alt="ปฏิบัติธรรมหนึ่งวัน ปฏิบัติธรรมวันอาทิตย์ วัดมเหยงคณ์">
+              </a>
             </figure>
             <figure class="slide">
-              <img src="images/banner-slide-apply-website.png?v=2" alt="สมัครสมาชิกเว็บไซต์วัดมเหยงคณ์เพื่อการสมัครคอร์สปฏิบัติธรรม">
+              <a href="https://watmahaeyong.or.th/signup" target="_blank" rel="noopener noreferrer" aria-label="สมัครสมาชิกเว็บไซต์วัดมเหยงคณ์">
+                <img src="images/banner-slide-apply-website.png?v=2" alt="สมัครสมาชิกเว็บไซต์วัดมเหยงคณ์เพื่อการสมัครคอร์สปฏิบัติธรรม">
+              </a>
             </figure>
             <figure class="slide">
-              <img src="images/banner-slide-festival-royal.png?v=2" alt="คอร์สเทศกาลวัดมเหยงคณ์">
-            </figure>
-            <figure class="slide" aria-hidden="true">
-              <img src="images/banner-slide-practice-one-day.png?v=2" alt="">
-            </figure>
-            <figure class="slide" aria-hidden="true">
-              <img src="images/banner-slide-apply-website.png?v=2" alt="">
-            </figure>
-            <figure class="slide" aria-hidden="true">
-              <img src="images/banner-slide-festival-royal.png?v=2" alt="">
+              <a href="https://watmahaeyong.or.th/course/31" target="_blank" rel="noopener noreferrer" aria-label="ดูรายละเอียดคอร์สเทศกาลวันเฉลิมพระชนมพรรษา 28–30 กรกฎาคม">
+                <img src="images/banner-slide-festival-royal.png?v=2" alt="คอร์สเทศกาลวัดมเหยงคณ์">
+              </a>
             </figure>
           </div>
         </div>
@@ -1615,6 +1616,50 @@
     renderCourses();
     renderFaq();
     applySharedLinks();
+
+    // Banner slider: pause on hover/touch so links are clickable
+    const sliderShell = document.querySelector('.slider-shell');
+    const sliderTrack = document.querySelector('.slider-track');
+    const bannerSlides = sliderTrack ? [...sliderTrack.querySelectorAll('.slide')] : [];
+    let bannerIndex = 0;
+    let bannerTimer = null;
+    const bannerInterval = 6000;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function showBannerSlide(index) {
+      if (!sliderTrack || !bannerSlides.length) return;
+      bannerIndex = (index + bannerSlides.length) % bannerSlides.length;
+      sliderTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
+    }
+
+    function startBannerAutoplay() {
+      if (prefersReducedMotion || bannerSlides.length <= 1) return;
+      stopBannerAutoplay();
+      bannerTimer = setInterval(() => showBannerSlide(bannerIndex + 1), bannerInterval);
+    }
+
+    function stopBannerAutoplay() {
+      clearInterval(bannerTimer);
+      bannerTimer = null;
+    }
+
+    if (sliderShell && sliderTrack && bannerSlides.length) {
+      showBannerSlide(0);
+      startBannerAutoplay();
+
+      sliderShell.addEventListener('mouseenter', stopBannerAutoplay);
+      sliderShell.addEventListener('mouseleave', startBannerAutoplay);
+      sliderShell.addEventListener('focusin', stopBannerAutoplay);
+      sliderShell.addEventListener('focusout', (event) => {
+        if (!sliderShell.contains(event.relatedTarget)) {
+          startBannerAutoplay();
+        }
+      });
+      sliderShell.addEventListener('touchstart', stopBannerAutoplay, { passive: true });
+      sliderShell.addEventListener('touchend', () => {
+        setTimeout(startBannerAutoplay, 4000);
+      }, { passive: true });
+    }
 
     // Nav scroll indicator logic
     const wrapper = document.querySelector('.nav-links-wrapper');

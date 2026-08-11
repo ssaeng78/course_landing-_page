@@ -527,6 +527,56 @@
       margin-top: 6px;
     }
 
+    .schedule-sidebar {
+      display: grid;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .btn-signup-blink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 2px solid #b8860b;
+      border-radius: 10px;
+      background: #ffd700;
+      color: #2b1b1d;
+      font-size: 1.12rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(255, 193, 7, 0.45);
+      animation: signup-blink 1.1s ease-in-out infinite;
+    }
+
+    .btn-signup-blink:hover {
+      color: #2b1b1d;
+      background: #ffea00;
+      transform: translateY(-2px);
+    }
+
+    @keyframes signup-blink {
+      0%,
+      100% {
+        background: #ffd700;
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.65), 0 4px 16px rgba(255, 193, 7, 0.45);
+      }
+
+      50% {
+        background: #fff59d;
+        box-shadow: 0 0 22px 8px rgba(255, 235, 59, 0.9), 0 4px 20px rgba(255, 193, 7, 0.55);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-signup-blink {
+        animation: none;
+      }
+    }
+
     .intro-card h2,
     .section-head h2 {
       color: var(--leaf);
@@ -1295,14 +1345,19 @@
             <li>ปฏิบัติและพักตามตารางเวลาที่กำหนด</li>
           </ol>
         </div>
-        <div class="schedule-column highlighted-section">
-          <h3>คอร์สมีทุกสัปดาห์ตลอดทั้งปี</h3>
-          <div class="schedule-list" aria-label="รอบคอร์ส">
-            <div class="schedule-item">เข้าทุกวันจันทร์ ออกทุกวันพฤหัสบดี</div>
-            <div class="schedule-item">เข้าทุกวันศุกร์ ออกวันอาทิตย์</div>
-            <div class="schedule-item">เข้าทุกวันเสาร์ ออกวันอาทิตย์</div>
+        <div class="schedule-sidebar">
+          <div class="schedule-column highlighted-section">
+            <h3>คอร์สมีทุกสัปดาห์ตลอดทั้งปี</h3>
+            <div class="schedule-list" aria-label="รอบคอร์ส">
+              <div class="schedule-item">เข้าทุกวันจันทร์ ออกทุกวันพฤหัสบดี</div>
+              <div class="schedule-item">เข้าทุกวันศุกร์ ออกวันอาทิตย์</div>
+              <div class="schedule-item">เข้าทุกวันเสาร์ ออกวันอาทิตย์</div>
+            </div>
+            <p class="note">สามารถอยู่ต่อเนื่องได้ไม่เกินสามคอร์ส</p>
           </div>
-          <p class="note">สามารถอยู่ต่อเนื่องได้ไม่เกินสามคอร์ส</p>
+          <a class="btn-signup-blink" href="https://www.v-vitchalai.com/course-234" target="_blank" rel="noopener noreferrer">
+            เข้าสู่ระบบสมัคร
+          </a>
         </div>
       </div>
     </section>

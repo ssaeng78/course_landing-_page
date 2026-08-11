@@ -536,6 +536,45 @@
       font-weight: 800;
     }
 
+    .schedule-intro {
+      margin: 0;
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .signup-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn-signup-orange {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 2px solid #e65100;
+      border-radius: 999px;
+      background: #ff9800;
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255, 152, 0, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-signup-orange:hover {
+      color: #1a1a1a;
+      background: #fb8c00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 152, 0, 0.45);
+    }
+
     .note {
       margin-top: 14px;
       color: var(--brown);
@@ -1382,23 +1421,17 @@
         </div>
         <div class="schedule-column">
           <h3>ขั้นตอนการสมัคร</h3>
-          <div class="schedule-list" aria-label="ลิงก์สมัคร">
-            <div class="schedule-item">1. ต้องสมัครเป็นสมาชิกของเว็บวัดมเหยงคณ์ล่วงหน้าก่อนสมัครคอร์ส</div>
+          <p class="schedule-intro">อ่านระเบียบการและเงื่อนไขให้เรียบร้อยก่อนกรอกใบสมัคร</p>
+          <div class="schedule-list" aria-label="ขั้นตอนการสมัคร">
+            <div class="schedule-item">1. สมัครเป็นสมาชิกของเว็บ "วัดมเหยงคณ์" (สำหรับผู้ที่ยังไม่เคยสมัคร หากท่านเคยสมัครแล้ว ข้ามไปที่ข้อ 2)</div>
             <div class="schedule-item">2. ลงทะเบียนและเลือกสมัครรอบคอร์ส 9 วัน ที่เปิดรับสมัคร</div>
-            <div class="schedule-item">3. อ่านระเบียบการและเงื่อนไขให้เรียบร้อยก่อนกรอกใบสมัคร</div>
           </div>
-          <div class="actions" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-            <a rel="noopener noreferrer" target="_blank" class="btn btn-primary" href="https://watmahaeyong.or.th/course?course_type=Long" style="flex: 1; min-width: 160px;">
-              ไปหน้าสมัครคอร์ส
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="signup-actions">
+            <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">
+              1. สมัครเป็นสมาชิกเว็บไซต์
             </a>
-            <a rel="noopener noreferrer" target="_blank" class="btn btn-secondary" href="https://watmahaeyong.or.th/signup" style="flex: 1; min-width: 160px;">
-              สมัครสมาชิกเว็บ
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-secondary" href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 160px; border-color: #06c755; color: #06c755;">
-              ติดต่อสอบถามทาง LINE
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course?course_type=Long">
+              2. ไปที่หน้าสมัครของคอร์ส
             </a>
           </div>
         </div>
