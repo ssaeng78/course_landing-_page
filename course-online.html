@@ -349,17 +349,93 @@
 
     .lead {
       max-width: 780px;
-      margin: 0 auto 34px;
+      margin: 0 auto;
       color: var(--muted);
       font-size: clamp(1.05rem, 2.2vw, 1.25rem);
       line-height: 1.7;
     }
 
-    .action-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .signup-section {
+      margin-top: 40px;
+      padding: clamp(22px, 4vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(251, 248, 241, .84);
+      box-shadow: var(--shadow);
+    }
+
+    .schedule-column {
+      display: grid;
       gap: 16px;
+    }
+
+    .schedule-column h3 {
+      color: var(--deep);
+      font-size: 1.14rem;
+      font-weight: 800;
+      margin: 0 0 -4px;
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .schedule-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(109, 31, 44, .13);
+      border-radius: 8px;
+      background: rgba(248, 244, 236, .78);
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .schedule-intro {
+      margin: 0;
+      color: var(--deep);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .signup-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn-signup-orange {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 2px solid #e65100;
+      border-radius: 999px;
+      background: #ff9800;
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255, 152, 0, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-signup-orange:hover {
+      color: #1a1a1a;
+      background: #fb8c00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 152, 0, 0.45);
+    }
+
+    .online-contact-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
     .btn {
@@ -737,20 +813,6 @@
         <p class="lead">
           สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์  จัดโครงการอบรมวิปัสสนากรรมฐานออนไลน์ เพื่อเปิดโอกาสให้แก่ผู้ที่มีความสนใจ แต่ไม่สะดวกเดินทางมาปฏิบัติธรรมที่วัดอันเนื่องมาจากปัญหาสุขภาพ อายุ หน้าที่การงาน หรือภาระครอบครัว โดยใช้บ้านเป็นสถานที่ฝึกฝนจิตใจตามตารางและข้อปฏิบัติที่กำหนดอย่างเป็นระบบ
         </p>
-        <div class="action-row">
-          <a class="btn btn-primary" href="https://watmahaeyong.or.th/course?course_type=Online" target="_blank" rel="noopener noreferrer">
-            ลงทะเบียนสมัครคอร์สออนไลน์
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a class="btn btn-secondary" href="index.html">
-            กลับหน้ารวมคอร์ส
-            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          </a>
-          <a class="btn btn-secondary" href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer" style="border-color: #06c755; color: #06c755;">
-            ติดต่อสอบถามทาง LINE
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -850,12 +912,29 @@
           </details>
 
         </div>
-        
-        <div style="margin-top: 40px; text-align: center;">
-          <div style="font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; line-height: 1.6;">
-            หากมีข้อสงสัยเกี่ยวกับโครงการกรรมฐานออนไลน์ กรุณาติดต่อ:<br>
-            <strong>พี่เลี้ยงลินลี่ โทร. <a href="tel:0874294514" style="color: var(--brown); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--brown);">087-429-4514</a></strong>
+
+        <div class="signup-section">
+          <div class="schedule-column">
+            <h3>ขั้นตอนการสมัคร</h3>
+            <p class="schedule-intro">อ่านระเบียบการและเงื่อนไขให้เรียบร้อยก่อนกรอกใบสมัคร</p>
+            <div class="schedule-list" aria-label="ขั้นตอนการสมัคร">
+              <div class="schedule-item">1. สมัครเป็นสมาชิกของเว็บ "วัดมเหยงคณ์" (สำหรับผู้ที่ยังไม่เคยสมัคร หากท่านเคยสมัครแล้ว ข้ามไปที่ข้อ 2)</div>
+              <div class="schedule-item">2. ลงทะเบียนและเลือกสมัครรอบคอร์สกรรมฐานออนไลน์ ที่เปิดรับสมัคร</div>
+            </div>
+            <div class="signup-actions">
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">
+                1. สมัครเป็นสมาชิกเว็บไซต์
+              </a>
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course?course_type=Online">
+                2. ไปที่หน้าสมัครของคอร์ส
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div class="online-contact-note">
+          หากมีข้อสงสัยเกี่ยวกับโครงการกรรมฐานออนไลน์ กรุณาติดต่อ:<br>
+          <strong>พี่เลี้ยงลินลี่ โทร. <a href="tel:0874294514" style="color: var(--brown); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--brown);">087-429-4514</a></strong>
         </div>
         
       </div>
