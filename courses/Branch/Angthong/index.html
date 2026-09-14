@@ -774,6 +774,10 @@
       font-size: 1rem;
     }
 
+    .detail-card .detail-toggle {
+      display: none;
+    }
+
     .course-tabs {
       background:
         radial-gradient(circle at 80% 10%, rgba(201, 166, 107, .18), transparent 23rem),
@@ -1220,6 +1224,32 @@
     }
 
     @media (max-width: 580px) {
+      .detail-card p {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+      }
+
+      .detail-card.is-expanded p {
+        display: block;
+      }
+
+      .detail-card .detail-toggle {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        margin-top: 10px;
+        padding: 7px 12px;
+        border: 1px solid rgba(226, 198, 139, .56);
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(226, 198, 139, .98);
+        font: inherit;
+        font-size: .9rem;
+        cursor: pointer;
+      }
+
       .rounds-grid {
         grid-template-columns: 1fr;
       }
@@ -1448,26 +1478,32 @@
           <article class="detail-card">
             <h3>การแต่งกาย</h3>
             <p>แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>การปฏิบัติในแต่ละวัน</h3>
             <p>ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>ค่าใช้จ่าย</h3>
             <p>ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่ต้องเตรียมไป</h3>
             <p>เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่เจ้าภาพจัดเตรียมไว้ให้</h3>
             <p>อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>การเดินทาง</h3>
             <p>ตั้งอยู่ที่ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม. สามารถดูตำแหน่งได้จากแผนที่สำนัก</p>
+            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
           </article>
         </div>
       </div>
@@ -1658,6 +1694,15 @@
     document.addEventListener('click', function() {
       document.querySelectorAll('.dropdown').forEach(d => {
         d.classList.remove('open');
+      });
+    });
+
+    document.querySelectorAll('.detail-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.detail-card');
+        const expanded = card.classList.toggle('is-expanded');
+        button.setAttribute('aria-expanded', String(expanded));
+        button.textContent = expanded ? 'ย่อข้อความ' : 'อ่านเพิ่มเติม';
       });
     });
   </script>

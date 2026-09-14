@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>สำนักพุทธอุทยานภาวนาเขมคุณ พะเยา | คอร์สกรรมฐานสาขา</title>
-  <meta name="description" content="ขอเชิญเข้าร่วมคอร์สกรรมฐาน พุทธอุทยานภาวนาเขมคุณ จ. พะเยา วันที่ 2–7 พฤศจิกายน 2569 โดยหลวงพ่อสุรศักดิ์ เขมรังสี">
+  <meta name="description" content="ขอเชิญเข้าร่วมคอร์สกรรมฐาน สำนักฯพุทธอุทยานภาวนาเขมคุณ จ. พะเยา วันที่ 2–7 พฤศจิกายน 2569 โดยหลวงพ่อสุรศักดิ์ เขมรังสี">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -384,6 +384,38 @@
       color: var(--muted);
       font-size: clamp(1.02rem, 2vw, 1.28rem);
       font-weight: 600;
+    }
+
+    .invite-kicker,
+    .invite-date,
+    .invite-by {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .invite-kicker {
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+
+    .invite-place {
+      margin: 8px 0 10px;
+      color: var(--leaf);
+      font-size: clamp(1.42rem, 4.6vw, 2.28rem);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+
+    .invite-date {
+      margin-bottom: 8px;
+      color: var(--deep);
+      font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+      font-weight: 700;
+    }
+
+    .invite-by {
+      font-size: clamp(1rem, 2vw, 1.18rem);
     }
 
     .actions {
@@ -774,6 +806,76 @@
       font-size: 1rem;
     }
 
+    .read-more {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-panel .read-more {
+      color: rgba(236, 214, 168, .98);
+    }
+
+    .read-more-btn {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-section {
+      padding: 0 0 clamp(36px, 6vw, 58px);
+      background: linear-gradient(180deg, #4d0d16 0%, #3a271c 42%, #322218 100%);
+      color: var(--paper);
+    }
+
+    .travel-panel {
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid rgba(201, 166, 107, .34);
+      border-radius: 12px;
+      background: rgba(92, 62, 36, .48);
+      box-shadow: 0 20px 60px -34px rgba(0, 0, 0, .55);
+    }
+
+    .travel-panel .eyebrow {
+      color: rgba(226, 198, 139, .92);
+    }
+
+    .travel-panel h2 {
+      margin: 6px 0 12px;
+      color: rgba(236, 214, 168, .98);
+      font-size: clamp(1.22rem, 2.6vw, 1.7rem);
+      line-height: 1.2;
+    }
+
+    .travel-panel p {
+      margin: 0;
+      max-width: 46rem;
+      color: rgba(251, 248, 241, .88);
+      font-size: 1.02rem;
+    }
+
+    .travel-panel .actions {
+      margin-top: 20px;
+    }
+
     .course-tabs {
       background:
         radial-gradient(circle at 80% 10%, rgba(201, 166, 107, .18), transparent 23rem),
@@ -1106,6 +1208,37 @@
         line-height: 1.55;
       }
 
+      .invite-kicker,
+      .invite-by {
+        font-size: .95rem;
+      }
+
+      .invite-place {
+        font-size: clamp(1.28rem, 6.2vw, 1.7rem);
+        margin: 6px 0 8px;
+      }
+
+      .invite-date {
+        font-size: 1.05rem;
+      }
+
+      .clamp-text.is-clamped {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .clamp-text.is-expanded {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more:not([hidden]) {
+        display: inline-block;
+      }
+
       .intro-card h2,
       .section-head h2 {
         font-size: clamp(1.18rem, 4.8vw, 1.65rem);
@@ -1119,6 +1252,7 @@
 
       .intro-card p,
       .detail-card p,
+      .travel-panel p,
       .info-card p,
       .info-card li {
         font-size: .9rem;
@@ -1132,6 +1266,23 @@
       .album-head p:not(.eyebrow) {
         font-size: .88rem;
         line-height: 1.5;
+      }
+
+      [data-read-more-text] {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+
+      [data-read-more].is-expanded [data-read-more-text] {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more-btn:not([hidden]) {
+        display: inline-flex;
       }
 
       .course-accordion summary {
@@ -1344,7 +1495,7 @@
   </header>
 
   
-  <h1 class="visually-hidden">สำนักพุทธอุทยานภาวนาเขมคุณ จังหวัดพะเยา</h1>
+  <h1 class="visually-hidden">สำนักฯพุทธอุทยานภาวนาเขมคุณ จ. พะเยา</h1>
 
   <section class="top-banner-wrap" aria-label="แบนเนอร์สำนักสาขาพะเยา">
     <div class="container">
@@ -1357,7 +1508,10 @@
   <main>
     <section class="hero-description">
       <div class="container">
-        <p class="lead">ขอเชิญเข้าร่วมคอร์สกรรมฐาน พุทธอุทยานภาวนาเขมคุณ จ. พะเยา<br>วันที่ 2–7 พฤศจิกายน 2569<br>โดยหลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์ พระวิปัสสนาจารย์</p>
+        <p class="invite-kicker">ขอเชิญเข้าร่วมคอร์สกรรมฐาน</p>
+        <p class="invite-place">สำนักฯพุทธอุทยานภาวนาเขมคุณ จ. พะเยา</p>
+        <p class="invite-date">วันที่ 2–7 พฤศจิกายน 2569</p>
+        <p class="invite-by">โดย หลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์<br>เป็นพระวิปัสสนาจารย์</p>
       </div>
     </section>
 
@@ -1447,29 +1601,51 @@
         <div class="detail-grid">
           <article class="detail-card">
             <h3>การแต่งกาย</h3>
-            <p>แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
+            <p class="clamp-text">แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>การปฏิบัติในแต่ละวัน</h3>
-            <p>ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
+            <p class="clamp-text">ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>ค่าใช้จ่าย</h3>
-            <p>ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้</p>
+            <p class="clamp-text">ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่ต้องเตรียมไป</h3>
-            <p>เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
+            <p class="clamp-text">เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่เจ้าภาพจัดเตรียมไว้ให้</h3>
-            <p>อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
-          </article>
-          <article class="detail-card">
-            <h3>การเดินทาง</h3>
-            <p>เดินทางโดยรถส่วนตัวหรือรถทัวร์ตามแผนที่สำนัก หรือนั่งเครื่องบินลงสนามบินเชียงรายแล้วต่อรถตู้ กรุณาโทรหรือเข้ากลุ่ม LINE เพื่อสอบถามเที่ยวบิน จะได้จัดรถตู้ให้มาพร้อมกัน</p>
+            <p class="clamp-text">อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="travel-section" id="travel" aria-labelledby="travel-title">
+      <div class="container">
+        <article class="travel-panel">
+          <p class="eyebrow">เส้นทางสู่สำนักสาขา</p>
+          <h2 id="travel-title">การเดินทาง</h2>
+          <p class="clamp-text">เดินทางโดยรถส่วนตัวหรือรถทัวร์ตามแผนที่สำนัก หรือนั่งเครื่องบินลงสนามบินเชียงรายแล้วต่อรถตู้ กรุณาโทรหรือเข้ากลุ่ม LINE เพื่อสอบถามเที่ยวบิน จะได้จัดรถตู้ให้มาพร้อมกัน</p>
+          <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/mbTZrJAb3cCnnUa58" target="_blank" rel="noopener noreferrer">
+              เปิดแผนที่สถานที่
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="https://line.me/R/ti/g/P3xPLC4j62" target="_blank" rel="noopener noreferrer">
+              เข้ากลุ่ม LINE สอบถามรถตู้
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1672,6 +1848,48 @@
         d.classList.remove('open');
       });
     });
+
+    const clampMedia = window.matchMedia('(max-width: 940px)');
+
+    function setupClampedText() {
+      document.querySelectorAll('.clamp-text').forEach((text) => {
+        const button = text.parentElement.querySelector(':scope > .read-more');
+        if (!button) return;
+
+        const collapse = () => {
+          text.classList.remove('is-expanded');
+          text.classList.add('is-clamped');
+          button.textContent = 'อ่านเพิ่มเติม';
+          button.setAttribute('aria-expanded', 'false');
+          requestAnimationFrame(() => {
+            const overflows = text.scrollHeight > text.clientHeight + 2;
+            button.hidden = !overflows;
+            if (!overflows) text.classList.remove('is-clamped');
+          });
+        };
+
+        if (!clampMedia.matches) {
+          text.classList.remove('is-clamped', 'is-expanded');
+          button.hidden = true;
+          return;
+        }
+
+        if (!button.dataset.bound) {
+          button.dataset.bound = 'true';
+          button.addEventListener('click', () => {
+            const expanded = text.classList.toggle('is-expanded');
+            text.classList.toggle('is-clamped', !expanded);
+            button.textContent = expanded ? 'ย่อข้อความ' : 'อ่านเพิ่มเติม';
+            button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          });
+        }
+
+        collapse();
+      });
+    }
+
+    setupClampedText();
+    clampMedia.addEventListener('change', setupClampedText);
   </script>
 </body>
 </html>
