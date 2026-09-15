@@ -396,19 +396,20 @@
     }
 
     .invite-kicker {
+      margin-bottom: 18px;
       font-size: clamp(1.02rem, 2vw, 1.22rem);
     }
 
     .invite-place {
-      margin: 8px 0 10px;
+      margin: 0 0 18px;
       color: var(--leaf);
       font-size: clamp(1.42rem, 4.6vw, 2.28rem);
       font-weight: 800;
-      line-height: 1.28;
+      line-height: 1.35;
     }
 
     .invite-date {
-      margin-bottom: 8px;
+      margin: 0 0 18px;
       color: var(--deep);
       font-size: clamp(1.08rem, 2.2vw, 1.32rem);
       font-weight: 700;
@@ -531,6 +532,22 @@
       text-decoration: none;
       box-shadow: 0 6px 18px rgba(255, 152, 0, 0.35);
       transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .signup-clip-link {
+      display: block;
+      margin-top: 4px;
+      color: var(--leaf);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .signup-clip-link:hover {
+      color: var(--deep);
     }
 
     .btn-signup-orange:hover {
@@ -855,12 +872,18 @@
     }
 
     .travel-panel .eyebrow {
-      color: rgba(226, 198, 139, .92);
+      color: var(--leaf);
+      background: #fff8ea;
+      border-color: rgba(255, 248, 234, .95);
+    }
+
+    .travel-panel .eyebrow::before {
+      background: var(--leaf);
     }
 
     .travel-panel h2 {
       margin: 6px 0 12px;
-      color: rgba(236, 214, 168, .98);
+      color: #fff4d8;
       font-size: clamp(1.22rem, 2.6vw, 1.7rem);
       line-height: 1.2;
     }
@@ -868,8 +891,9 @@
     .travel-panel p {
       margin: 0;
       max-width: 46rem;
-      color: rgba(251, 248, 241, .88);
+      color: #fff8ea;
       font-size: 1.02rem;
+      font-weight: 600;
     }
 
     .travel-panel .actions {
@@ -1213,13 +1237,18 @@
         font-size: .95rem;
       }
 
+      .invite-kicker {
+        margin-bottom: 14px;
+      }
+
       .invite-place {
-        font-size: clamp(1.28rem, 6.2vw, 1.7rem);
-        margin: 6px 0 8px;
+        font-size: clamp(1.18rem, 5.6vw, 1.7rem);
+        margin: 0 0 14px;
       }
 
       .invite-date {
         font-size: 1.05rem;
+        margin: 0 0 14px;
       }
 
       .clamp-text.is-clamped {
@@ -1509,7 +1538,7 @@
     <section class="hero-description">
       <div class="container">
         <p class="invite-kicker">ขอเชิญเข้าร่วมคอร์สกรรมฐาน</p>
-        <p class="invite-place">สำนักฯพุทธอุทยานภาวนาเขมคุณ จ. พะเยา</p>
+        <p class="invite-place">สำนักฯพุทธอุทยานภาวนาเขมคุณ<br>จ. พะเยา</p>
         <p class="invite-date">วันที่ 2–7 พฤศจิกายน 2569</p>
         <p class="invite-by">โดย หลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์<br>เป็นพระวิปัสสนาจารย์</p>
       </div>
@@ -1586,6 +1615,7 @@
             <div class="signup-actions">
               <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">1. สมัครเป็นสมาชิกเว็บไซต์</a>
               <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course/17#tab-dateTime">2. ไปที่หน้าสมัครของคอร์ส</a>
+              <a class="signup-clip-link" href="https://www.facebook.com/reel/1600013038256266/" target="_blank" rel="noopener noreferrer">คลิปวิธีการสมัครสมาชิกและคอร์ส</a>
             </div>
           </div>
         </div>
@@ -1640,10 +1670,6 @@
               เปิดแผนที่สถานที่
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-secondary" href="https://line.me/R/ti/g/P3xPLC4j62" target="_blank" rel="noopener noreferrer">
-              เข้ากลุ่ม LINE สอบถามรถตู้
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
           </div>
         </article>
       </div>
@@ -1653,7 +1679,7 @@
       <div class="container tab-layout">
         <div class="tab-note">กำหนดการในแต่ละวัน คลิกเพื่ออ่านรายละเอียด ตารางเวลาอาจมีการปรับเปลี่ยนตามความเหมาะสมของสถานการณ์</div>
         <div class="tabs-stack">
-          <details class="course-accordion" open>
+          <details class="course-accordion">
             <summary>
               <span class="summary-text">
                 <span>กำหนดการในแต่ละวัน</span>
