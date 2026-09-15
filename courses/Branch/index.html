@@ -1218,30 +1218,44 @@
       }
     }
   
-    .branch-grid {
+    .branch-layout {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+      gap: clamp(20px, 3vw, 32px);
+      align-items: start;
     }
-    .branch-card {
+
+    .branch-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .branch-sidebar-item {
       background: rgba(251, 248, 241, .88);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 26px 24px 24px;
+      padding: 20px 20px 18px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
-    .branch-card h3 {
+
+    .branch-sidebar-item h3 {
       margin: 0;
       color: var(--leaf);
-      font-size: 1.22rem;
+      font-size: 1.12rem;
+      line-height: 1.35;
     }
-    .branch-card p {
+
+    .branch-sidebar-item p {
       margin: 0;
       color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
     }
+
     .branch-dates {
       margin: 0;
       padding: 0;
@@ -1249,6 +1263,7 @@
       display: grid;
       gap: 8px;
     }
+
     .branch-dates li {
       background: #fff;
       border: 1px solid var(--line);
@@ -1256,6 +1271,30 @@
       padding: 10px 12px;
       font-weight: 700;
       color: var(--deep);
+      font-size: 0.92rem;
+    }
+
+    .branch-sidebar-item .btn {
+      margin-top: 4px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .branch-showcase {
+      position: sticky;
+      top: 96px;
+      overflow: hidden;
+      border: 10px solid rgba(255, 253, 247, .9);
+      border-radius: 3px;
+      box-shadow: 0 24px 70px rgba(38, 55, 42, .18);
+      background: rgba(251, 248, 241, .88);
+    }
+
+    .branch-showcase img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     .place-box {
       background: rgba(251, 248, 241, .88);
@@ -1288,8 +1327,15 @@
       background: var(--leaf);
       font-weight: 800;
     }
-    @media (max-width: 760px) {
-      .branch-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .branch-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .branch-showcase {
+        position: static;
+        order: -1;
+      }
     }
 </style>
 </head>
@@ -1360,43 +1406,48 @@
           <p class="eyebrow">เลือกสำนักสาขา</p>
           <h2>คลิกดูรายละเอียดแต่ละแห่ง</h2>
         </div>
-        <div class="branch-grid">
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดอ่างทอง</p>
-            <h3>สวนธรรมพุทธรักษา</h3>
-            <p>ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม.</p>
-            <ul class="branch-dates">
-              <li>วันที่ 24–30 พฤศจิกายน 2568</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/Angthong">
-              ดูรายละเอียดสาขาอ่างทอง
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดนครสวรรค์</p>
-            <h3>สำนักกรรมฐานวัดทุ่งหินเทิน</h3>
-            <p>ตำบลปางสวรรค์ อำเภอชุมตาบง จังหวัดนครสวรรค์ บรรยากาศร่มรื่น อยู่ติดแหล่งท่องเที่ยวชื่อดังของจังหวัด</p>
-            <ul class="branch-dates">
-              <li>วันที่ 21–26 พฤศจิกายน 2568</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/nakonsawan">
-              ดูรายละเอียดสาขานครสวรรค์
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดพะเยา</p>
-            <h3>สำนักกรรมฐานพุทธอุทยานภาวนาเขมคุณ</h3>
-            <p>ตำบลแม่นาเรือ อำเภอเมืองพะเยา จังหวัดพะเยา บรรยากาศธรรมชาติสำหรับเจริญวิปัสสนากรรมฐาน</p>
-            <ul class="branch-dates">
-              <li>วันที่ 2–7 พฤศจิกายน 2569</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/payao">
-              ดูรายละเอียดสาขาพะเยา
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
+        <div class="branch-layout">
+          <aside class="branch-sidebar" aria-label="รายการสำนักสาขา">
+            <article class="branch-sidebar-item">
+              <p class="eyebrow">สาขา จังหวัดอ่างทอง</p>
+              <h3>สวนธรรมพุทธรักษา</h3>
+              <p>ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม.</p>
+              <ul class="branch-dates">
+                <li>วันที่ 24–30 พฤศจิกายน 2568</li>
+              </ul>
+              <a class="btn btn-primary" href="/courses/Branch/Angthong">
+                ดูรายละเอียดสาขาอ่างทอง
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="branch-sidebar-item">
+              <p class="eyebrow">สาขา จังหวัดนครสวรรค์</p>
+              <h3>สำนักกรรมฐานวัดทุ่งหินเทิน</h3>
+              <p>ตำบลปางสวรรค์ อำเภอชุมตาบง จังหวัดนครสวรรค์ บรรยากาศร่มรื่น อยู่ติดแหล่งท่องเที่ยวชื่อดังของจังหวัด</p>
+              <ul class="branch-dates">
+                <li>วันที่ 21–26 พฤศจิกายน 2568</li>
+              </ul>
+              <a class="btn btn-primary" href="/courses/Branch/nakonsawan">
+                ดูรายละเอียดสาขานครสวรรค์
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="branch-sidebar-item">
+              <p class="eyebrow">สาขา จังหวัดพะเยา</p>
+              <h3>สำนักกรรมฐานพุทธอุทยานภาวนาเขมคุณ</h3>
+              <p>ตำบลแม่นาเรือ อำเภอเมืองพะเยา จังหวัดพะเยา บรรยากาศธรรมชาติสำหรับเจริญวิปัสสนากรรมฐาน</p>
+              <ul class="branch-dates">
+                <li>วันที่ 2–7 พฤศจิกายน 2569</li>
+              </ul>
+              <a class="btn btn-primary" href="/courses/Branch/payao">
+                ดูรายละเอียดสาขาพะเยา
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </aside>
+          <figure class="branch-showcase">
+            <img src="/images/course-branch-banner.jpg" alt="บรรยากาศคอร์สกรรมฐานสำนักสาขา สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์">
+          </figure>
         </div>
       </div>
     </section>
