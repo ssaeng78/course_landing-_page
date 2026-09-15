@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>สวนธรรมพุทธรักษา อ่างทอง | คอร์สกรรมฐานสาขา</title>
-  <meta name="description" content="ขอเชิญร่วมปฏิบัติธรรม ณ สวนธรรมพุทธรักษา จ. อ่างทอง วันที่ 24–30 พฤศจิกายน 2568 โดยหลวงพ่อสุรศักดิ์ เขมรังสี">
+  <meta name="description" content="ขอเชิญเข้าร่วมคอร์สกรรมฐาน สวนธรรมพุทธรักษา จ. อ่างทอง วันที่ 24–30 พฤศจิกายน 2568 โดยหลวงพ่อสุรศักดิ์ เขมรังสี">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -386,6 +386,38 @@
       font-weight: 600;
     }
 
+    .invite-kicker,
+    .invite-date,
+    .invite-by {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .invite-kicker {
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+
+    .invite-place {
+      margin: 8px 0 10px;
+      color: var(--leaf);
+      font-size: clamp(1.42rem, 4.6vw, 2.28rem);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+
+    .invite-date {
+      margin-bottom: 8px;
+      color: var(--deep);
+      font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+      font-weight: 700;
+    }
+
+    .invite-by {
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -690,23 +722,23 @@
 
     .album-slider {
       overflow: hidden;
-      padding: 22px 0 28px;
+      padding: 28px 0 36px;
     }
 
     .album-track {
       display: flex;
       width: max-content;
-      gap: 14px;
-      animation: albumScroll 80s linear infinite;
+      gap: 18px;
+      animation: albumScroll 52s linear infinite;
       will-change: transform;
     }
 
     .album-slide {
-      width: clamp(260px, 46vw, 520px);
-      aspect-ratio: 16 / 10;
+      width: clamp(480px, 72vw, 920px);
+      aspect-ratio: 16 / 9;
       flex: 0 0 auto;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 10px;
       background: var(--paper);
       box-shadow: 0 18px 46px -32px rgba(74, 16, 23, .55);
     }
@@ -774,8 +806,74 @@
       font-size: 1rem;
     }
 
-    .detail-card .detail-toggle {
+    .read-more {
       display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-panel .read-more {
+      color: rgba(236, 214, 168, .98);
+    }
+
+    .read-more-btn {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-section {
+      padding: 0 0 clamp(36px, 6vw, 58px);
+      background: linear-gradient(180deg, #4d0d16 0%, #3a271c 42%, #322218 100%);
+      color: var(--paper);
+    }
+
+    .travel-panel {
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid rgba(201, 166, 107, .34);
+      border-radius: 12px;
+      background: rgba(92, 62, 36, .48);
+      box-shadow: 0 20px 60px -34px rgba(0, 0, 0, .55);
+    }
+
+    .travel-panel .eyebrow {
+      color: rgba(226, 198, 139, .92);
+    }
+
+    .travel-panel h2 {
+      margin: 6px 0 12px;
+      color: rgba(236, 214, 168, .98);
+      font-size: clamp(1.22rem, 2.6vw, 1.7rem);
+      line-height: 1.2;
+    }
+
+    .travel-panel p {
+      margin: 0;
+      max-width: 46rem;
+      color: rgba(251, 248, 241, .88);
+      font-size: 1.02rem;
+    }
+
+    .travel-panel .actions {
+      margin-top: 20px;
     }
 
     .course-tabs {
@@ -1110,6 +1208,37 @@
         line-height: 1.55;
       }
 
+      .invite-kicker,
+      .invite-by {
+        font-size: .95rem;
+      }
+
+      .invite-place {
+        font-size: clamp(1.28rem, 6.2vw, 1.7rem);
+        margin: 6px 0 8px;
+      }
+
+      .invite-date {
+        font-size: 1.05rem;
+      }
+
+      .clamp-text.is-clamped {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .clamp-text.is-expanded {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more:not([hidden]) {
+        display: inline-block;
+      }
+
       .intro-card h2,
       .section-head h2 {
         font-size: clamp(1.18rem, 4.8vw, 1.65rem);
@@ -1123,6 +1252,7 @@
 
       .intro-card p,
       .detail-card p,
+      .travel-panel p,
       .info-card p,
       .info-card li {
         font-size: .9rem;
@@ -1136,6 +1266,23 @@
       .album-head p:not(.eyebrow) {
         font-size: .88rem;
         line-height: 1.5;
+      }
+
+      [data-read-more-text] {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+
+      [data-read-more].is-expanded [data-read-more-text] {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more-btn:not([hidden]) {
+        display: inline-flex;
       }
 
       .course-accordion summary {
@@ -1194,14 +1341,14 @@
       }
 
       .album-track {
-        gap: 8px;
-        animation-duration: 104s;
+        gap: 10px;
+        animation-duration: 70s;
       }
 
       .album-slide {
-        width: calc(100vw - 22px);
-        max-width: calc(100vw - 22px);
-        border-radius: 6px;
+        width: calc(100vw - 16px);
+        max-width: calc(100vw - 16px);
+        border-radius: 8px;
       }
 
       .actions {
@@ -1224,32 +1371,6 @@
     }
 
     @media (max-width: 580px) {
-      .detail-card p {
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-      }
-
-      .detail-card.is-expanded p {
-        display: block;
-      }
-
-      .detail-card .detail-toggle {
-        display: inline-flex;
-        align-items: center;
-        min-height: 36px;
-        margin-top: 10px;
-        padding: 7px 12px;
-        border: 1px solid rgba(226, 198, 139, .56);
-        border-radius: 999px;
-        background: transparent;
-        color: rgba(226, 198, 139, .98);
-        font: inherit;
-        font-size: .9rem;
-        cursor: pointer;
-      }
-
       .rounds-grid {
         grid-template-columns: 1fr;
       }
@@ -1379,7 +1500,7 @@
   <section class="top-banner-wrap" aria-label="แบนเนอร์สำนักสาขาอ่างทอง">
     <div class="container">
       <div class="top-banner">
-        <img src="/images/course-branch-angthong-banner.jpg" alt="สวนธรรมพุทธรักษา จังหวัดอ่างทอง สำนักสาขาวัดมเหยงคณ์">
+        <img src="/images/course-branch-angthong-banner.png?v=2" alt="สำนักฯ สวนธรรมพุทธรักษา จังหวัดอ่างทอง สำนักสาขาวัดมเหยงคณ์">
       </div>
     </div>
   </section>
@@ -1387,7 +1508,10 @@
   <main>
     <section class="hero-description">
       <div class="container">
-        <p class="lead">ขอเชิญร่วมปฏิบัติธรรม ณ สวนธรรมพุทธรักษา จ. อ่างทอง<br>วันที่ 24–30 พฤศจิกายน 2568<br>โดยหลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์ พระวิปัสสนาจารย์</p>
+        <p class="invite-kicker">ขอเชิญเข้าร่วมคอร์สกรรมฐาน</p>
+        <p class="invite-place">สวนธรรมพุทธรักษา จ. อ่างทอง</p>
+        <p class="invite-date">วันที่ 24–30 พฤศจิกายน 2568</p>
+        <p class="invite-by">โดย หลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์<br>เป็นพระวิปัสสนาจารย์</p>
       </div>
     </section>
 
@@ -1399,7 +1523,7 @@
           <div class="place-meta">
             <div>
               <strong>สอบถามได้ที่</strong>
-              กลุ่ม LINE คอร์สสาขาอ่างทอง และพี่เลี้ยงประจำคอร์ส 081-989-0740
+              <a href="https://line.me/ti/g2/5crG4NlWe2enBmYKoKOf9gykIADnYnE12I37Fw" target="_blank" rel="noopener noreferrer" style="color: var(--leaf); font-weight: 800;">กลุ่ม LINE คอร์สสาขาอ่างทอง</a> และพี่เลี้ยงประจำคอร์ส 081-989-0740
             </div>
             <div>
               <strong>สมัครเข้าปฏิบัติธรรม</strong>
@@ -1415,7 +1539,7 @@
               เข้ากลุ่ม LINE สอบถาม
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-primary" href="https://watmahaeyong.or.th/course/18" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-primary" href="https://watmahaeyong.or.th/course/18#tab-dateTime" target="_blank" rel="noopener noreferrer">
               สมัครเข้าปฏิบัติธรรม
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -1461,7 +1585,7 @@
             </div>
             <div class="signup-actions">
               <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">1. สมัครเป็นสมาชิกเว็บไซต์</a>
-              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course/18">2. ไปที่หน้าสมัครของคอร์ส</a>
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course/18#tab-dateTime">2. ไปที่หน้าสมัครของคอร์ส</a>
             </div>
           </div>
         </div>
@@ -1477,35 +1601,51 @@
         <div class="detail-grid">
           <article class="detail-card">
             <h3>การแต่งกาย</h3>
-            <p>แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
+            <p class="clamp-text">แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>การปฏิบัติในแต่ละวัน</h3>
-            <p>ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
+            <p class="clamp-text">ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>ค่าใช้จ่าย</h3>
-            <p>ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
+            <p class="clamp-text">ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่ต้องเตรียมไป</h3>
-            <p>เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
+            <p class="clamp-text">เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
           <article class="detail-card">
             <h3>สิ่งที่เจ้าภาพจัดเตรียมไว้ให้</h3>
-            <p>อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
-          </article>
-          <article class="detail-card">
-            <h3>การเดินทาง</h3>
-            <p>ตั้งอยู่ที่ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม. สามารถดูตำแหน่งได้จากแผนที่สำนัก</p>
-            <button class="detail-toggle" type="button" aria-expanded="false">อ่านเพิ่มเติม</button>
+            <p class="clamp-text">อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="travel-section" id="travel" aria-labelledby="travel-title">
+      <div class="container">
+        <article class="travel-panel">
+          <p class="eyebrow">เส้นทางสู่สำนักสาขา</p>
+          <h2 id="travel-title">การเดินทาง</h2>
+          <p class="clamp-text">ตั้งอยู่ที่ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม. สามารถเดินทางโดยรถส่วนตัวตามแผนที่สำนัก หรือสอบถามเส้นทางในกลุ่ม LINE ของคอร์ส</p>
+          <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/4omkpVRanRLpCbEC9" target="_blank" rel="noopener noreferrer">
+              เปิดแผนที่สถานที่
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="https://line.me/ti/g2/5crG4NlWe2enBmYKoKOf9gykIADnYnE12I37Fw" target="_blank" rel="noopener noreferrer">
+              เข้ากลุ่ม LINE สอบถามการเดินทาง
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1581,14 +1721,26 @@
         </div>
         <div class="album-slider" aria-label="อัลบั้มภาพสำนักสาขาอ่างทอง">
           <div class="album-track">
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVOYZOqTvSXuCgjt9txea7gElv_uFPKcIrzoo-aQ3J4VOMmqwjNeUY0F91yp7NUryw5GFjqtsDe5-YuoE2whUtBISwED1faURxLylGceby-aq4JRX97rOmf5xejngxoK0HLPKiWgqGWk9VwaAkRPMYcNxglnCKxBifZX232xZajPltvYTteEAgZhr5rg5QXQwxtRtuvUuI1qRDGugzFbljXZ1lr3LzNYo07xjet4f4=w1280" alt="บรรยากาศสวนธรรมพุทธรักษา จังหวัดอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQX2ticcLNVArc6yy0HUdsgs3koU7ESwXCN0eLtDyozGjNOPaWeJjO8GnaNs5jT1ltDlTGl5XQJ2QzB96QAaaBRdpCW8QqYE4ksfw1j_0PxEKoCO6aIrvscS9-AOnv1tULcYPEiPXf6nOCSBcYb028CrDIx0eKhXIk6RSED5Fuqdg7Z_pWBTQnIPl1Ly80vA5LQiGy2ZFchUlYM4zp04jGae3A24RFi4Cu5ccru5=w1280" alt="ภาพสถานที่ปฏิบัติธรรมสาขาอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUMWUiOOuT3-H_Vt1460O5nbvI_woLxB2JGPAIQS5FedqjfG-fGvS8zvczLKME0aHTucjg73t6rX-uWoaLoJ3I8YJ4hBqCLyIzVLxlN-kHZy5Vk0woLmwbv9JECVHNNPEnaT-r3YZxoSAfdWBbyLiaJt1t5aKCq-DA0kHK7zq0-sLe3ruPFXBIw-AKJc-mDFuDYYH6XQ1JFVMXOYm-8IoDlnzuwP-JAYZXdLKyw6fY=w1280" alt="ภาพบรรยากาศคอร์สกรรมฐานสาขาอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQV3cAZKn1GinIrqRYGQ5g3lZTTld0P_O_1tIpwIGICAR6ZKiLgBqHkHY2RtSCPbxnB0nnyiaG_POTCINGB1vokBLlxo_n84zNp9FL_MFX5qYamwdxggB4p1JEw_UCQAbcA16MCH58NQmxdgMta-W6RVEmL4gSLosYwtkzRO_4DLuhr2POAbIQRi1j0zVXzoaqZFcdgBZKg3IQRqEg7cLL1v5KmLuxxCoFru3_IvLT8=w1280" alt="ภาพบรรยากาศสำนักสาขาอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQW2IibVPLKR_mq5y9wv2MJ_jFE4UrGkSbSdc8m50L8cBd4TKID6OQTuy61mEkXieQD355c4C0dNlsm3Ehi9yiQdOcaguJoodRepTSQbjRGyk_Z3PjmMfN8uxeAM4lYn5YPZsEmxojbhU7EKqLfIwG7k6dW_yAQeNwWqLwBJwwVkjW5WLGPkKOaMe9B0jxoOGYaijgKXl-87VO3MBzynKxkDzqGo-vY6I8XgwAr8IHM=w1280" alt="ภาพบรรยากาศสำนักสาขาอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVkHOQwaxqVp0h1hL9rjP1H0fBo2Ym1Wt_MNgzCFnINcE-IzxjDfQpck08XHTfr3tf716FjzGtu-J-Yxze26PrsPRdP0bbx1UVsvvLKhdshVVdmfFRwfn_DHKO-7AezYSFImiYwGrbERPMdR9BydEp4cLnS3bKbPfYFH1O0iz6QN3U4K_f3MLx6hZV_MTjGVArw16hPA3vdiGUzn_eXV6DrkgyuOlA5QyL8BsNnuRc=w1280" alt="ภาพบรรยากาศสำนักสาขาอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVOYZOqTvSXuCgjt9txea7gElv_uFPKcIrzoo-aQ3J4VOMmqwjNeUY0F91yp7NUryw5GFjqtsDe5-YuoE2whUtBISwED1faURxLylGceby-aq4JRX97rOmf5xejngxoK0HLPKiWgqGWk9VwaAkRPMYcNxglnCKxBifZX232xZajPltvYTteEAgZhr5rg5QXQwxtRtuvUuI1qRDGugzFbljXZ1lr3LzNYo07xjet4f4=w1280" alt="บรรยากาศสวนธรรมพุทธรักษา จังหวัดอ่างทอง"></figure>
-            <figure class="album-slide"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQX2ticcLNVArc6yy0HUdsgs3koU7ESwXCN0eLtDyozGjNOPaWeJjO8GnaNs5jT1ltDlTGl5XQJ2QzB96QAaaBRdpCW8QqYE4ksfw1j_0PxEKoCO6aIrvscS9-AOnv1tULcYPEiPXf6nOCSBcYb028CrDIx0eKhXIk6RSED5Fuqdg7Z_pWBTQnIPl1Ly80vA5LQiGy2ZFchUlYM4zp04jGae3A24RFi4Cu5ccru5=w1280" alt="ภาพสถานที่ปฏิบัติธรรมสาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-01.jpg" alt="พระสงฆ์และโยมตักบาตรที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-02.jpg" alt="ผู้ปฏิบัติธรรมเดินตามทางเข้าสำนักสาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-03.jpg" alt="ผู้ปฏิบัติธรรมนั่งสมาธิหน้าพระพุทธรูปที่สาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-04.jpg" alt="คณะผู้ปฏิบัติธรรมถ่ายภาพหมู่ที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-05.jpg" alt="แถวห้องพักผู้ปฏิบัติธรรมที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-06.jpg" alt="ลานธรรมและพระพุทธรูปที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-07.jpg" alt="กุฏิสงฆ์พุทธรักษาที่สาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-08.jpg" alt="ที่พักพระสงฆ์ที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-09.jpg" alt="พระพุทธรูปกลางลานธรรมสาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-10.jpg" alt="ศาลาไม้ยกพื้นที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-01.jpg" alt="พระสงฆ์และโยมตักบาตรที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-02.jpg" alt="ผู้ปฏิบัติธรรมเดินตามทางเข้าสำนักสาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-03.jpg" alt="ผู้ปฏิบัติธรรมนั่งสมาธิหน้าพระพุทธรูปที่สาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-04.jpg" alt="คณะผู้ปฏิบัติธรรมถ่ายภาพหมู่ที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-05.jpg" alt="แถวห้องพักผู้ปฏิบัติธรรมที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-06.jpg" alt="ลานธรรมและพระพุทธรูปที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-07.jpg" alt="กุฏิสงฆ์พุทธรักษาที่สาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-08.jpg" alt="ที่พักพระสงฆ์ที่สวนธรรมพุทธรักษา"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-09.jpg" alt="พระพุทธรูปกลางลานธรรมสาขาอ่างทอง"></figure>
+            <figure class="album-slide"><img src="/images/angthong-album-10.jpg" alt="ศาลาไม้ยกพื้นที่สวนธรรมพุทธรักษา"></figure>
           </div>
         </div>
       </div>
@@ -1622,11 +1774,11 @@
         <p>จัดทำโดยสถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
         <div class="contact-detail">
           <span>เบอร์โทร: 080-907-1543, 081-443-2630</span>
-          <span>LINE ID: <a rel="noopener noreferrer" target="_blank" href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชชาลัย)</span>
+          <span>LINE: <a rel="noopener noreferrer" target="_blank" href="https://line.me/ti/g2/5crG4NlWe2enBmYKoKOf9gykIADnYnE12I37Fw" style="color: var(--leaf);">กลุ่ม LINE สาขาอ่างทอง</a></span>
         </div>
         <div style="margin-top: 18px; font-size: 0.92rem; color: var(--muted); font-weight: 600;">ติดตามข่าวสารของสถาบันฯ ได้ที่</div>
         <div class="footer-socials" style="margin-top: 8px;">
-          <a href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer" class="social-btn line" aria-label="LINE Official Account">
+          <a href="https://line.me/ti/g2/5crG4NlWe2enBmYKoKOf9gykIADnYnE12I37Fw" target="_blank" rel="noopener noreferrer" class="social-btn line" aria-label="กลุ่ม LINE สาขาอ่างทอง">
             <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.564.39.085.922.258 1.058.595.122.303.08.778.039 1.084l-.171 1.037c-.053.303-.251 1.192.109 1.3.361.109.978-.508 1.399-.926 1.644-1.632 2.651-2.476 3.666-3.799 4.356-.814 6.814-4.521 6.814-8.629zm-16.14 2.766h-1.425a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39H7.86c.215 0 .39.175.39.39v3.941a.39.39 0 0 1-.39.39zm3.023-.39a.39.39 0 0 1-.39.39h-.645a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h.645a.39.39 0 0 1 .39.39v4.726zm4.845 0a.39.39 0 0 1-.39.39H14.19a.39.39 0 0 1-.303-.146L12.046 9.94v2.74a.39.39 0 0 1-.39.39h-.64a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h1.139c.092 0 .18.032.25.09l1.859 2.215V7.954a.39.39 0 0 1 .39-.39h.64a.39.39 0 0 1 .39.39v4.726zm3.923-2.18h-.947v.9h1.372a.39.39 0 0 1 .39.39v.502a.39.39 0 0 1-.39.39H18.26a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h2.023c.215 0 .39.175.39.39v.502a.39.39 0 0 1-.39.39h-1.372v.901h.947c.215 0 .39.175.39.39v.502a.39.39 0 0 1-.39.39z"/></svg>
           </a>
           <a href="https://www.facebook.com/vippasanavitchalai" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook Page">
@@ -1697,14 +1849,47 @@
       });
     });
 
-    document.querySelectorAll('.detail-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const card = button.closest('.detail-card');
-        const expanded = card.classList.toggle('is-expanded');
-        button.setAttribute('aria-expanded', String(expanded));
-        button.textContent = expanded ? 'ย่อข้อความ' : 'อ่านเพิ่มเติม';
+    const clampMedia = window.matchMedia('(max-width: 940px)');
+
+    function setupClampedText() {
+      document.querySelectorAll('.clamp-text').forEach((text) => {
+        const button = text.parentElement.querySelector(':scope > .read-more');
+        if (!button) return;
+
+        const collapse = () => {
+          text.classList.remove('is-expanded');
+          text.classList.add('is-clamped');
+          button.textContent = 'อ่านเพิ่มเติม';
+          button.setAttribute('aria-expanded', 'false');
+          requestAnimationFrame(() => {
+            const overflows = text.scrollHeight > text.clientHeight + 2;
+            button.hidden = !overflows;
+            if (!overflows) text.classList.remove('is-clamped');
+          });
+        };
+
+        if (!clampMedia.matches) {
+          text.classList.remove('is-clamped', 'is-expanded');
+          button.hidden = true;
+          return;
+        }
+
+        if (!button.dataset.bound) {
+          button.dataset.bound = 'true';
+          button.addEventListener('click', () => {
+            const expanded = text.classList.toggle('is-expanded');
+            text.classList.toggle('is-clamped', !expanded);
+            button.textContent = expanded ? 'ย่อข้อความ' : 'อ่านเพิ่มเติม';
+            button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          });
+        }
+
+        collapse();
       });
-    });
+    }
+
+    setupClampedText();
+    clampMedia.addEventListener('change', setupClampedText);
   </script>
 </body>
 </html>
