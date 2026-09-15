@@ -533,6 +533,22 @@
       transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
+    .signup-clip-link {
+      display: block;
+      margin-top: 4px;
+      color: var(--leaf);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .signup-clip-link:hover {
+      color: var(--deep);
+    }
+
     .btn-signup-orange:hover {
       color: #1a1a1a;
       background: #fb8c00;
@@ -855,12 +871,18 @@
     }
 
     .travel-panel .eyebrow {
-      color: rgba(226, 198, 139, .92);
+      color: var(--leaf);
+      background: #fff8ea;
+      border-color: rgba(255, 248, 234, .95);
+    }
+
+    .travel-panel .eyebrow::before {
+      background: var(--leaf);
     }
 
     .travel-panel h2 {
       margin: 6px 0 12px;
-      color: rgba(236, 214, 168, .98);
+      color: #fff4d8;
       font-size: clamp(1.22rem, 2.6vw, 1.7rem);
       line-height: 1.2;
     }
@@ -1586,6 +1608,7 @@
             <div class="signup-actions">
               <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">1. สมัครเป็นสมาชิกเว็บไซต์</a>
               <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course/18#tab-dateTime">2. ไปที่หน้าสมัครของคอร์ส</a>
+              <a class="signup-clip-link" href="https://www.facebook.com/reel/1600013038256266/" target="_blank" rel="noopener noreferrer">คลิปวิธีการสมัครสมาชิกและคอร์ส</a>
             </div>
           </div>
         </div>
