@@ -1219,10 +1219,8 @@
     }
   
     .branch-layout {
-      display: grid;
-      grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
-      gap: clamp(20px, 3vw, 32px);
-      align-items: start;
+      max-width: 640px;
+      margin-inline: auto;
     }
 
     .branch-sidebar {
@@ -1294,22 +1292,6 @@
       justify-content: center;
     }
 
-    .branch-showcase {
-      position: sticky;
-      top: 96px;
-      overflow: hidden;
-      border: 10px solid rgba(255, 253, 247, .9);
-      border-radius: 3px;
-      box-shadow: 0 24px 70px rgba(38, 55, 42, .18);
-      background: rgba(251, 248, 241, .88);
-    }
-
-    .branch-showcase img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
     .place-box {
       background: rgba(251, 248, 241, .88);
       border: 1px solid var(--line);
@@ -1340,16 +1322,6 @@
       color: var(--paper);
       background: var(--leaf);
       font-weight: 800;
-    }
-    @media (max-width: 900px) {
-      .branch-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .branch-showcase {
-        position: static;
-        order: -1;
-      }
     }
 </style>
 </head>
@@ -1468,9 +1440,6 @@
               </a>
             </article>
           </aside>
-          <figure class="branch-showcase">
-            <img src="/images/course-branch-banner.jpg" alt="บรรยากาศคอร์สกรรมฐานสำนักสาขา สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์">
-          </figure>
         </div>
       </div>
     </section>
