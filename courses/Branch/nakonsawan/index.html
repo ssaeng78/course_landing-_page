@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>คอร์สกรรมฐานสาขา | วัดมเหยงคณ์</title>
-  <meta name="description" content="รวมสำนักปฏิบัติธรรมสาขาวัดมเหยงคณ์ ทั่วประเทศ รวมถึงวัดทุ่งหินเทิน จังหวัดนครสวรรค์ และสำนักพุทธอุทยานภาวนาเขมคุณ จังหวัดพะเยา">
+  <title>สำนักกรรมฐานวัดทุ่งหินเทิน นครสวรรค์ | คอร์สกรรมฐานสาขา</title>
+  <meta name="description" content="ขอเชิญร่วมปฏิบัติธรรม ณ สถานปฏิบัติธรรมวัดทุ่งหินเทิน จ. นครสวรรค์ วันที่ 21–26 พฤศจิกายน 2568 โดยหลวงพ่อสุรศักดิ์ เขมรังสี">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -320,6 +320,18 @@
       object-fit: contain;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .hero-header {
       padding: 44px 0 0;
       text-align: center;
@@ -372,6 +384,38 @@
       color: var(--muted);
       font-size: clamp(1.02rem, 2vw, 1.28rem);
       font-weight: 600;
+    }
+
+    .invite-kicker,
+    .invite-date,
+    .invite-by {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .invite-kicker {
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+
+    .invite-place {
+      margin: 8px 0 10px;
+      color: var(--leaf);
+      font-size: clamp(1.42rem, 4.6vw, 2.28rem);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+
+    .invite-date {
+      margin-bottom: 8px;
+      color: var(--deep);
+      font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+      font-weight: 700;
+    }
+
+    .invite-by {
+      font-size: clamp(1rem, 2vw, 1.18rem);
     }
 
     .actions {
@@ -678,23 +722,23 @@
 
     .album-slider {
       overflow: hidden;
-      padding: 22px 0 28px;
+      padding: 28px 0 36px;
     }
 
     .album-track {
       display: flex;
       width: max-content;
-      gap: 14px;
-      animation: albumScroll 80s linear infinite;
+      gap: 18px;
+      animation: albumScroll 28s linear infinite;
       will-change: transform;
     }
 
     .album-slide {
-      width: clamp(260px, 46vw, 520px);
-      aspect-ratio: 16 / 10;
+      width: clamp(480px, 72vw, 920px);
+      aspect-ratio: 16 / 9;
       flex: 0 0 auto;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 10px;
       background: var(--paper);
       box-shadow: 0 18px 46px -32px rgba(74, 16, 23, .55);
     }
@@ -760,6 +804,76 @@
     .detail-card p {
       color: rgba(251, 248, 241, .84);
       font-size: 1rem;
+    }
+
+    .read-more {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-panel .read-more {
+      color: rgba(236, 214, 168, .98);
+    }
+
+    .read-more-btn {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: rgba(226, 198, 139, .96);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .travel-section {
+      padding: 0 0 clamp(36px, 6vw, 58px);
+      background: linear-gradient(180deg, #4d0d16 0%, #3a271c 42%, #322218 100%);
+      color: var(--paper);
+    }
+
+    .travel-panel {
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid rgba(201, 166, 107, .34);
+      border-radius: 12px;
+      background: rgba(92, 62, 36, .48);
+      box-shadow: 0 20px 60px -34px rgba(0, 0, 0, .55);
+    }
+
+    .travel-panel .eyebrow {
+      color: rgba(226, 198, 139, .92);
+    }
+
+    .travel-panel h2 {
+      margin: 6px 0 12px;
+      color: rgba(236, 214, 168, .98);
+      font-size: clamp(1.22rem, 2.6vw, 1.7rem);
+      line-height: 1.2;
+    }
+
+    .travel-panel p {
+      margin: 0;
+      max-width: 46rem;
+      color: rgba(251, 248, 241, .88);
+      font-size: 1.02rem;
+    }
+
+    .travel-panel .actions {
+      margin-top: 20px;
     }
 
     .course-tabs {
@@ -1094,6 +1208,37 @@
         line-height: 1.55;
       }
 
+      .invite-kicker,
+      .invite-by {
+        font-size: .95rem;
+      }
+
+      .invite-place {
+        font-size: clamp(1.28rem, 6.2vw, 1.7rem);
+        margin: 6px 0 8px;
+      }
+
+      .invite-date {
+        font-size: 1.05rem;
+      }
+
+      .clamp-text.is-clamped {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .clamp-text.is-expanded {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more:not([hidden]) {
+        display: inline-block;
+      }
+
       .intro-card h2,
       .section-head h2 {
         font-size: clamp(1.18rem, 4.8vw, 1.65rem);
@@ -1107,6 +1252,7 @@
 
       .intro-card p,
       .detail-card p,
+      .travel-panel p,
       .info-card p,
       .info-card li {
         font-size: .9rem;
@@ -1120,6 +1266,23 @@
       .album-head p:not(.eyebrow) {
         font-size: .88rem;
         line-height: 1.5;
+      }
+
+      [data-read-more-text] {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+
+      [data-read-more].is-expanded [data-read-more-text] {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+
+      .read-more-btn:not([hidden]) {
+        display: inline-flex;
       }
 
       .course-accordion summary {
@@ -1178,14 +1341,14 @@
       }
 
       .album-track {
-        gap: 8px;
-        animation-duration: 104s;
+        gap: 10px;
+        animation-duration: 36s;
       }
 
       .album-slide {
-        width: calc(100vw - 22px);
-        max-width: calc(100vw - 22px);
-        border-radius: 6px;
+        width: calc(100vw - 16px);
+        max-width: calc(100vw - 16px);
+        border-radius: 8px;
       }
 
       .actions {
@@ -1332,17 +1495,12 @@
   </header>
 
   
-  <section class="hero-header">
-    <div class="container">
-      <p class="eyebrow">สำนักปฏิบัติธรรมสาขา</p>
-      <h1>คอร์สกรรมฐานสาขา</h1>
-    </div>
-  </section>
+  <h1 class="visually-hidden">สถานปฏิบัติธรรมวัดทุ่งหินเทิน จ. นครสวรรค์</h1>
 
-  <section class="top-banner-wrap" aria-label="แบนเนอร์คอร์สกรรมฐานสาขา">
+  <section class="top-banner-wrap" aria-label="แบนเนอร์สำนักสาขานครสวรรค์">
     <div class="container">
       <div class="top-banner">
-        <img src="/images/course-branch-banner.png" alt="คอร์สกรรมฐานสำนักสาขา สถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์">
+        <img src="/images/course-branch-nakonsawan-banner.jpg" alt="สถานปฏิบัติธรรมวัดทุ่งหินเทิน จังหวัดนครสวรรค์ สำนักสาขาวัดมเหยงคณ์">
       </div>
     </div>
   </section>
@@ -1350,76 +1508,235 @@
   <main>
     <section class="hero-description">
       <div class="container">
-        <p class="lead">วัดมเหยงคณ์ ได้จัดให้มีคอร์สปฏิบัติธรรมในสำนักปฏิบัติธรรมสาขาหลายแห่งทั่วประเทศ มีการจัดปฏิบัติธรรมสับเปลี่ยนหมุนเวียนกันไป<br>ท่านสามารถดูรายละเอียดแต่ละแห่งได้ด้านล่าง และสอบถามตารางการปฏิบัติได้ที่ LINE สถาบันวิปัสสนาวิชชาลัย</p>
+        <p class="invite-kicker">ขอเชิญร่วมปฏิบัติธรรม ณ สถานปฏิบัติธรรมวัดทุ่งหินเทิน</p>
+        <p class="invite-place">สำนักกรรมฐานของวัดมเหยงคณ์ จ. นครสวรรค์</p>
+        <p class="invite-date">วันที่ 21–26 พฤศจิกายน 2568</p>
+        <p class="invite-by">โดย หลวงพ่อสุรศักดิ์ เขมรังสี เจ้าอาวาสวัดมเหยงคณ์<br>เป็นพระวิปัสสนาจารย์</p>
       </div>
     </section>
 
-    <section style="padding-bottom: 44px;">
+    <section style="padding-bottom: 24px;">
+      <div class="container">
+        <div class="place-box">
+          <p class="eyebrow">สอบถามและสมัคร</p>
+          <h2>วัดทุ่งหินเทิน จ. นครสวรรค์</h2>
+          <div class="place-meta">
+            <div>
+              <strong>สอบถามได้ที่</strong>
+              <a href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" target="_blank" rel="noopener noreferrer" style="color: var(--leaf); font-weight: 800;">กลุ่ม LINE คอร์สสาขานครสวรรค์</a> และพี่เลี้ยงประจำคอร์ส 081-912-9219
+            </div>
+            <div>
+              <strong>สมัครเข้าปฏิบัติธรรม</strong>
+              สมัครผ่านเว็บวัดมเหยงคณ์ที่คอร์สหมายเลข 16 หากพบปัญหาการสมัครสมาชิกหรือสมัครคอร์ส ติดต่อ 080-907-1543, 081-443-2630
+            </div>
+            <div>
+              <strong>สถานที่</strong>
+              สถานปฏิบัติธรรมวัดทุ่งหินเทิน ตำบลปางสวรรค์ อำเภอชุมตาบง จังหวัดนครสวรรค์ อยู่ติดแหล่งท่องเที่ยวชื่อดังของจังหวัด บรรยากาศร่มรื่น สะดวกสบายพอสมควร
+            </div>
+          </div>
+          <div class="actions" style="margin-top: 18px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" target="_blank" rel="noopener noreferrer">
+              เข้ากลุ่ม LINE สอบถาม
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-primary" href="https://watmahaeyong.or.th/course/16" target="_blank" rel="noopener noreferrer">
+              สมัครเข้าปฏิบัติธรรม
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="https://goo.gl/maps/H39Wna3HRKG2" target="_blank" rel="noopener noreferrer">
+              เปิดแผนที่สถานที่
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-bottom: 24px;">
+      <div class="container intro-card" style="max-width: 860px; margin: 0 auto;">
+        <div>
+          <p class="eyebrow">ข้อมูลการปฏิบัติธรรม</p>
+          <h2>โดยมีรายละเอียดดังนี้</h2>
+          <ol class="details-list">
+            <li>ถือศีลแปดตลอดการปฏิบัติ ยกเว้นผู้มีปัญหาสุขภาพหรือโรคประจำตัวบางอย่างที่ไม่สามารถงดอาหารเย็นได้ และมีอาหารมังสวิรัติบริการสำหรับผู้ต้องการ</li>
+            <li>ผู้ปฏิบัติต้องนำเต็นท์มาเอง รวมทั้งเสื่อ หรือผ้าปูนอน แผ่นพลาสติกปูพื้น (มีหมอนและผ้าห่มให้ยืมถ้าต้องการ) อาจจะมีฝน ดังนั้นโปรดเตรียมแผ่นพลาสติกคลุมกันฝนด้วย</li>
+            <li>มีไฟฟ้าใช้ในส่วนกลาง ควรนำไฟฉายมาด้วย</li>
+            <li>มีห้องน้ำเพียงพอต่อการใช้งาน</li>
+            <li>รับผู้ปฏิบัติประมาณ 100 ท่าน เพื่อการดูแลที่ทั่วถึง</li>
+            <li>ผู้ปฏิบัติต้องสามารถอยู่ได้จนครบกำหนด ขออนุญาตไม่รับสมัครผู้ที่มาได้เป็นบางวันหรือไม่เต็มคอร์ส</li>
+            <li>ปิดวาจา และงดใช้โทรศัพท์หรือเครื่องมือสื่อสารทุกชนิด พี่เลี้ยงจะเก็บเครื่องมือสื่อสารไว้ตลอดการอบรม แต่ญาติสามารถติดต่อกรณีฉุกเฉินได้ตลอด โดยโทรผ่านพี่เลี้ยง</li>
+            <li>ลงทะเบียนวันอบรมวันแรกตอนประมาณเที่ยงตรง และวันสุดท้ายปิดคอร์สเสร็จสิ้นประมาณเที่ยงตรง</li>
+            <li>มีทั้งอาสนะปูพื้นและนั่งเก้าอี้สำหรับผู้ที่ต้องการ</li>
+            <li>อายุ 15 ปีขึ้นไป และไม่เป็นโรคประจำตัวร้ายแรง</li>
+            <li>ผู้สูงอายุหญิง (เกิน 60 ปี ณ วันที่เริ่มคอร์ส) สามารถนอนในศาลาได้</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0; padding-bottom: 24px;">
+      <div class="container">
+        <div class="signup-section">
+          <div class="schedule-column">
+            <h3>ขั้นตอนการสมัคร</h3>
+            <p class="schedule-intro">อ่านระเบียบการและเงื่อนไขให้เรียบร้อยก่อนกรอกใบสมัคร</p>
+            <div class="schedule-list" aria-label="ขั้นตอนการสมัคร">
+              <div class="schedule-item">1. สมัครเป็นสมาชิกของเว็บ "วัดมเหยงคณ์" หากท่านเคยสมัครแล้ว ข้ามไปที่ข้อ 2</div>
+              <div class="schedule-item">2. สมัครคอร์สวัดทุ่งหินเทิน จ. นครสวรรค์ ที่หน้าสมัครคอร์สของวัด</div>
+            </div>
+            <div class="signup-actions">
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/signup">1. สมัครเป็นสมาชิกเว็บไซต์</a>
+              <a rel="noopener noreferrer" target="_blank" class="btn-signup-orange" href="https://watmahaeyong.or.th/course/16">2. ไปที่หน้าสมัครของคอร์ส</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="details">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">เลือกสำนักสาขา</p>
-          <h2>คลิกดูรายละเอียดแต่ละแห่ง</h2>
+          <p class="eyebrow">ก่อนเดินทาง</p>
+          <h2>การแต่งกาย ที่พัก และสิ่งที่ต้องเตรียม</h2>
         </div>
-        <div class="branch-grid">
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดอ่างทอง</p>
-            <h3>สวนธรรมพุทธรักษา</h3>
-            <p>ตำบลมหาดไทย อำเภอเมืองอ่างทอง จังหวัดอ่างทอง ห่างจากวัดมเหยงคณ์ประมาณ 40 กม.</p>
-            <ul class="branch-dates">
-              <li>วันที่ 24–30 พฤศจิกายน 2568</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/Angthong">
-              ดูรายละเอียดสาขาอ่างทอง
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>การแต่งกาย</h3>
+            <p class="clamp-text">แต่งกายชุดขาวตลอดการปฏิบัติ ผู้ชายใช้เสื้อและกางเกงสีขาว งดกางเกงขาสั้น ผู้หญิงชุดขาว ผ้าถุงขาว และพาดสไบขาว ในช่วงแยกปฏิบัติตอนกลางวัน ผู้หญิงสามารถใช้กางเกงขายาวสีขาวหรือดำได้ โปรดเตรียมเสื้อผ้าให้เพียงพอตลอดการอบรม ซักได้เท่าที่จำเป็น เพราะน้ำประปามีจำกัด</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          </article>
+          <article class="detail-card">
+            <h3>การปฏิบัติในแต่ละวัน</h3>
+            <p class="clamp-text">ตื่นนอนตีสี่ มีการปฏิบัติตามตารางตลอดวันสลับกับการบรรยายธรรม ต้องรับกรรมฐาน ปิดวาจา ถือศีลแปดตลอดการปฏิบัติ เว้นแต่ผู้ที่จำเป็นต้องทานอาหารเย็น สามารถขอถืออาชีวัฏฐมกศีลได้ เข้านอนประมาณสามทุ่ม</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          </article>
+          <article class="detail-card">
+            <h3>ค่าใช้จ่าย</h3>
+            <p class="clamp-text">ไม่มีค่าใช้จ่าย แต่สามารถร่วมทำบุญเป็นเจ้าภาพได้ ยกเว้นผู้ที่ต้องการร่วมเดินทางโดยรถตู้ที่จัดให้ การอบรมครั้งนี้อาศัยทุนจากเจ้าภาพภายนอก ประมาณ 200,000 บาท ร่วมบุญบัญชี “สำนักฯ ทุ่งหินเทิน” ธ.กรุงเทพ 478-4-25175-5 แจ้งโอนที่ LINE วัดมเหยงคณ์ @mahaeyong หรือโทร 082-233-8858</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          </article>
+          <article class="detail-card">
+            <h3>สิ่งที่ต้องเตรียมไป</h3>
+            <p class="clamp-text">เต็นท์และเครื่องนอนตามสะดวก เต็นท์ละหนึ่งท่าน ไม่อนุญาตให้นอนมากกว่าหนึ่งท่านในแต่ละเต็นท์ ไม่มีเต็นท์ให้ยืมหรือเช่า หมอนและผ้าห่มมีให้ยืม เสื้อแขนยาว ไฟฉาย นาฬิกาปลุก ยาทากันยุง ขวดน้ำส่วนตัว ร่ม รองเท้าแตะ ถุงเท้า ของใช้ส่วนตัว ยารักษาโรคส่วนตัว เสื่อพับเล็ก แผ่นพลาสติก และบัตรประชาชนตัวจริงสำหรับลงทะเบียน</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          </article>
+          <article class="detail-card">
+            <h3>สิ่งที่เจ้าภาพจัดเตรียมไว้ให้</h3>
+            <p class="clamp-text">อาหารเช้าและกลางวัน ทั้งอาหารทั่วไปและมังสวิรัติ เครื่องดื่ม และน้ำปานะช่วงเย็น ผ้าห่มและหมอน อาสนะนั่งปฏิบัติ และเก้าอี้สำหรับผู้สูงอายุหรือมีปัญหาสุขภาพ รวมทั้งยาพื้นฐานชุดปฐมพยาบาล</p>
+            <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="travel-section" id="travel" aria-labelledby="travel-title">
+      <div class="container">
+        <article class="travel-panel">
+          <p class="eyebrow">เส้นทางสู่สำนักสาขา</p>
+          <h2 id="travel-title">การเดินทาง</h2>
+          <p class="clamp-text">เดินทางโดยรถส่วนตัวได้ ควรไปถึงก่อนเวลา 12.00 น. ใช้เวลาประมาณ 4 ชั่วโมงจากกรุงเทพฯ รถตู้ออกจากวัดมเหยงคณ์ จ. พระนครศรีอยุธยา เวลา 07.00 น. ค่าโดยสาร 1,000 บาทไปกลับ และรถตู้ออกจากกรุงเทพฯ เวลา 06.30 น. บริเวณหน้าร้านอาหารสีฟ้าสยามสแควร์ ค่าโดยสาร 1,100 บาทไปกลับ ต้องแจ้งสำรองที่นั่งและชำระเงินล่วงหน้า หากมีเงินค่ารถที่เก็บเกินกว่าที่จ่ายจริง จะถวายทางวัดทั้งหมด</p>
+          <button type="button" class="read-more" hidden>อ่านเพิ่มเติม</button>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://goo.gl/maps/H39Wna3HRKG2" target="_blank" rel="noopener noreferrer">
+              เปิดแผนที่สถานที่
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดนครสวรรค์</p>
-            <h3>สำนักกรรมฐานวัดทุ่งหินเทิน</h3>
-            <p>ตำบลปางสวรรค์ อำเภอชุมตาบง จังหวัดนครสวรรค์ บรรยากาศร่มรื่น อยู่ติดแหล่งท่องเที่ยวชื่อดังของจังหวัด</p>
-            <ul class="branch-dates">
-              <li>วันที่ 21–26 พฤศจิกายน 2568</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/nakonsawan">
-              ดูรายละเอียดสาขานครสวรรค์
+            <a class="btn btn-secondary" href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" target="_blank" rel="noopener noreferrer">
+              เข้ากลุ่ม LINE สอบถามรถตู้
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดพะเยา</p>
-            <h3>สำนักกรรมฐานพุทธอุทยานภาวนาเขมคุณ</h3>
-            <p>ตำบลแม่นาเรือ อำเภอเมืองพะเยา จังหวัดพะเยา บรรยากาศธรรมชาติสำหรับเจริญวิปัสสนากรรมฐาน</p>
-            <ul class="branch-dates">
-              <li>วันที่ 2–7 พฤศจิกายน 2569</li>
-            </ul>
-            <a class="btn btn-primary" href="/courses/Branch/payao">
-              ดูรายละเอียดสาขาพะเยา
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดเชียงใหม่</p>
-            <h3>สำนักฯปรมัตถภาวนา (ดอยภูโอบ)</h3>
-            <p>ตำบลสะลวง อำเภอแม่ริม จังหวัดเชียงใหม่ ใกล้วัดพระพุทธบาทสี่รอย</p>
-            <ul class="branch-dates">
-              <li>24–30 พ.ย. 2568</li>
-              <li>21–26 พ.ย. 2568</li>
-            </ul>
-            <a class="btn btn-secondary" href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer">
-              สอบถามตารางทาง LINE
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
-          <article class="branch-card">
-            <p class="eyebrow">สาขา จังหวัดอุบลราชธานี</p>
-            <h3>สำนักฯเจติยบรรพต (ภูผาผึ้ง)</h3>
-            <p>ตำบลโพธิ์ไทร อำเภอโพธิ์ไทร จังหวัดอุบลราชธานี</p>
-            <p>ตารางหมุนเวียนตามประกาศของแต่ละรอบ กรุณาสอบถามก่อนเดินทาง</p>
-            <a class="btn btn-secondary" href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer">
-              สอบถามตารางทาง LINE
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="course-tabs">
+      <div class="container tab-layout">
+        <div class="tab-note">กำหนดการในแต่ละวัน คลิกเพื่ออ่านรายละเอียด ตารางเวลาอาจมีการปรับเปลี่ยนตามความเหมาะสมของสถานการณ์</div>
+        <div class="tabs-stack">
+          <details class="course-accordion" open>
+            <summary>
+              <span class="summary-text">
+                <span>กำหนดการในแต่ละวัน</span>
+                <span class="summary-hint">กดปุ่มลูกศร เพื่ออ่าน</span>
+              </span>
+            </summary>
+            <div class="accordion-body">
+              <h3>วันเปิดอบรม</h3>
+              <ul class="timeline">
+                <li><strong>14.00 – 14.30 น.</strong>ปฐมนิเทศ โดยพี่เลี้ยงกรรมฐาน</li>
+                <li><strong>14.30 – 15.00 น.</strong>ทำพิธีสมาทานกรรมฐานและปฏิบัติกรรมฐาน</li>
+                <li><strong>15.00 – 16.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ</li>
+                <li><strong>16.00 – 17.00 น.</strong>ดื่มน้ำปานะ และภารกิจส่วนตัว</li>
+                <li><strong>17.00 – 18.00 น.</strong>นั่งสมาธิฟังเสียงธรรมบรรยาย</li>
+                <li><strong>18.00 – 18.30 น.</strong>ทำวัตรเย็น</li>
+                <li><strong>18.30 – 20.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ</li>
+                <li><strong>20.00 – 21.00 น.</strong>ฟังธรรมบรรยาย</li>
+                <li><strong>21.00 น.</strong>กลับที่พัก</li>
+              </ul>
+              <h3>วันที่สองเป็นต้นไป</h3>
+              <ul class="timeline">
+                <li><strong>04.30 น.</strong>ตื่นนอน เจริญสติปัฏฐานอยู่ตามลำพัง</li>
+                <li><strong>05.00 – 05.30 น.</strong>ทำวัตรเช้า</li>
+                <li><strong>05.30 – 06.00 น.</strong>ปฏิบัติภาวนา นั่งสมาธิ</li>
+                <li><strong>06.00 – 07.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ</li>
+                <li><strong>07.00 – 08.00 น.</strong>ตักบาตร และรับประทานอาหารเช้า</li>
+                <li><strong>08.00 – 09.00 น.</strong>ภารกิจส่วนตัว</li>
+                <li><strong>09.00 – 11.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ ตามลำพัง</li>
+                <li><strong>11.00 – 12.30 น.</strong>รับประทานอาหารกลางวัน</li>
+                <li><strong>13.30 – 14.30 น.</strong>ปฏิบัติเดินจงกรม</li>
+                <li><strong>14.30 – 15.30 น.</strong>ปฏิบัตินั่งสมาธิ</li>
+                <li><strong>15.30 – 17.00 น.</strong>ดื่มน้ำปานะ และภารกิจส่วนตัว</li>
+                <li><strong>17.00 – 18.00 น.</strong>นั่งสมาธิฟังเสียงธรรมบรรยาย หรือส่งอารมณ์</li>
+                <li><strong>18.00 – 18.30 น.</strong>ทำวัตรเย็น</li>
+                <li><strong>18.30 – 20.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ</li>
+                <li><strong>20.00 – 21.00 น.</strong>ฟังธรรมบรรยาย</li>
+                <li><strong>21.00 น.</strong>กลับที่พัก</li>
+              </ul>
+              <h3>วันปิดอบรม</h3>
+              <ul class="timeline">
+                <li><strong>04.00 น.</strong>ตื่นนอน เจริญสติปัฏฐานอยู่ตามลำพัง</li>
+                <li><strong>04.30 – 05.30 น.</strong>ทำวัตรเช้า</li>
+                <li><strong>05.00 – 06.00 น.</strong>นั่งสมาธิปฏิบัติภาวนา</li>
+                <li><strong>06.00 – 07.00 น.</strong>ปฏิบัติภาวนา เดินจงกรม นั่งสมาธิ</li>
+                <li><strong>07.00 – 08.00 น.</strong>ตักบาตร และรับประทานอาหารเช้า</li>
+                <li><strong>08.00 – 09.00 น.</strong>เก็บสัมภาระ ทำความสะอาดที่พัก ลานธรรม ห้องน้ำ และบริเวณสำนักฯ</li>
+                <li><strong>09.00 – 10.00 น.</strong>พิธีลากรรมฐาน</li>
+                <li><strong>10.00 – 11.00 น.</strong>แสดงความรู้สึก และทำบุญบำรุงสำนักปฏิบัติธรรมวัดทุ่งหินเทิน ตามกำลังศรัทธา</li>
+                <li><strong>11.00 – 12.00 น.</strong>รับประทานอาหารกลางวัน</li>
+                <li><strong>12.00 น.</strong>เดินทางกลับโดยสวัสดิภาพ</li>
+              </ul>
+              <div class="important-box">หมายเหตุ ตารางเวลาอาจมีการปรับเปลี่ยนตามความเหมาะสมของสถานการณ์</div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="album-section" aria-labelledby="nakonsawan-album-title">
+      <div class="container album-shell">
+        <div class="album-head">
+          <p class="eyebrow">อัลบั้มรูป</p>
+          <h2 id="nakonsawan-album-title">บรรยากาศสำนักกรรมฐานวัดทุ่งหินเทิน</h2>
+          <p>เลื่อนที่ภาพเพื่อดูเพิ่ม</p>
+        </div>
+        <div class="album-slider" aria-label="อัลบั้มภาพสำนักสาขานครสวรรค์">
+          <div class="album-track">
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWgRV8Vkubhbd34LkPitZ3byGwNKy9SSsGBFTHGeFguwun6BJL4o5QNdYv4hPbjKJc43IEjAzClBPrxVCvbHf57ya0U7VvFtKhch7zwdYEUTcQMi-DncYfZ_afeKrqQEuS8Rcoc7Ua2YTTta0s0j-SDIKYPbtK7wRJ_mszFtR6WQBGXKUXep4-FBBIu6yyhwhUtZ6E9e8pMeAEy=w1280" alt="ผู้ปฏิบัติธรรมยืนภาวนาที่สำนักวัดทุ่งหินเทิน นครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQX9uk5MNHxHZm6be2RIODONt44MbMyCt8S668JnhlXC-f6PBpKdlcuFmpITUZgnzRuJVyFwGND8Do71nWKVOgil4O_vRowZiBbLcarVj_fxmNbeTIGJysvBnvadSPH1BrSzZDrrQzbK2HSmiIaBKKr08eEUKft9HikN88IIMn5as82Nqk-RGxXMlS9Dr3GvR6eWqBU5Uj9O1TJV=w1280" alt="บรรยากาศสถานปฏิบัติธรรมวัดทุ่งหินเทิน"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWESUMwRuZlaJojsG6HITyY6M0YxHJgiLYvjnoR7T1w7O-LuqBEEmUUdriJgI1V3WT2-1af_KZPrs-K4CqGmUlmKjnV3t0sjlDZHq_n9WSDgAGavVhukgm8_r7nLzVRvswNPcnvSXdGoQBpf3V5XCiV1sNVDuB7q-99O9_MaNQLUjTU6Jjc-llCYxasAjkCtJLB3T9mQ-rySRW_=w1280" alt="ภาพบรรยากาศคอร์สกรรมฐานสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWdSV1LQ2u1LQjtcm_3FRxFfEMGOA19YaLRQ2Uy6Modi3BwlV8OgOM3OdHmszPLO24ZmUmK7svDsLm9ZL33HDypHoOi4avkdLTamFEnnZGv_I0ECeG4jRX2muMfyNmzj6nRhlGyFUjjbATwPiZHPdRXgAJuZPmSl1KNBRYPGTvO6Qq9ozRIes4ZBfVgrIEa-iqUL9Kl57seN1p4=w1280" alt="ภาพสถานที่ปฏิบัติธรรมวัดทุ่งหินเทิน"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQVVjOa0ZZipmoeEdVeYd01f5V9f5Xmp1J5J1CYVSzPoWAOf3i5YZxvJXScBjKvi2HUNyb_7sge-levU57hTj2OEEhYoMvGF4H2vV083gSRPZmUu8KBVJaEMtTJ-2-Dyq_M5DyDsB2Pkai4TAACdUCJ0XB1O_PdwGDUQS20xriErgJ9wcW7jjo8QXX5t7Ymd4DpAR9-npusYJIz2xq0=w1280" alt="ภาพบรรยากาศสำนักสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQXGL01N7tLs715X7m1qYfzWnIO24UG-ZvBT-IxjaVT7Io4tJiTRCIJCswRjg0h3OCZvTZpvqSFx8-2pk3V8liSS2AJwP_KJ-Kw64ygVTQSj6Jx23AW8SzcWEHbGY_HzTHe408KSpXTfop_20gpjAAR5L0E6CumHX11IszG4ZZ9DGau9FHaYVttpJNNXEDK_oNiI3KLMRBRAaP1I=w1280" alt="ภาพสถานที่ปฏิบัติธรรมสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQV3aQ1zIJs3nFczsvH_4oGhRBcjMsxumgFbt0kJMwk2R6caLUXk2ctbT6Nsmhhk3eDE0cXcqAUB9tOf5ntwsG3DVwF35bncc_qr4talJQnh1mEZDtOlH2PhFqO2wD8suDBIM_1BcLIQdtVHXJJPY6Y3urw7JuL9dR73NcfNxzAp7i3Sf50KoQAyZY2ZwUyVYV_UOwPLFj-heDYqE5E=w1280" alt="ภาพบรรยากาศคอร์สกรรมฐานวัดทุ่งหินเทิน"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWgRV8Vkubhbd34LkPitZ3byGwNKy9SSsGBFTHGeFguwun6BJL4o5QNdYv4hPbjKJc43IEjAzClBPrxVCvbHf57ya0U7VvFtKhch7zwdYEUTcQMi-DncYfZ_afeKrqQEuS8Rcoc7Ua2YTTta0s0j-SDIKYPbtK7wRJ_mszFtR6WQBGXKUXep4-FBBIu6yyhwhUtZ6E9e8pMeAEy=w1280" alt="ผู้ปฏิบัติธรรมยืนภาวนาที่สำนักวัดทุ่งหินเทิน นครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQX9uk5MNHxHZm6be2RIODONt44MbMyCt8S668JnhlXC-f6PBpKdlcuFmpITUZgnzRuJVyFwGND8Do71nWKVOgil4O_vRowZiBbLcarVj_fxmNbeTIGJysvBnvadSPH1BrSzZDrrQzbK2HSmiIaBKKr08eEUKft9HikN88IIMn5as82Nqk-RGxXMlS9Dr3GvR6eWqBU5Uj9O1TJV=w1280" alt="บรรยากาศสถานปฏิบัติธรรมวัดทุ่งหินเทิน"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWESUMwRuZlaJojsG6HITyY6M0YxHJgiLYvjnoR7T1w7O-LuqBEEmUUdriJgI1V3WT2-1af_KZPrs-K4CqGmUlmKjnV3t0sjlDZHq_n9WSDgAGavVhukgm8_r7nLzVRvswNPcnvSXdGoQBpf3V5XCiV1sNVDuB7q-99O9_MaNQLUjTU6Jjc-llCYxasAjkCtJLB3T9mQ-rySRW_=w1280" alt="ภาพบรรยากาศคอร์สกรรมฐานสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWdSV1LQ2u1LQjtcm_3FRxFfEMGOA19YaLRQ2Uy6Modi3BwlV8OgOM3OdHmszPLO24ZmUmK7svDsLm9ZL33HDypHoOi4avkdLTamFEnnZGv_I0ECeG4jRX2muMfyNmzj6nRhlGyFUjjbATwPiZHPdRXgAJuZPmSl1KNBRYPGTvO6Qq9ozRIes4ZBfVgrIEa-iqUL9Kl57seN1p4=w1280" alt="ภาพสถานที่ปฏิบัติธรรมวัดทุ่งหินเทิน"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQVVjOa0ZZipmoeEdVeYd01f5V9f5Xmp1J5J1CYVSzPoWAOf3i5YZxvJXScBjKvi2HUNyb_7sge-levU57hTj2OEEhYoMvGF4H2vV083gSRPZmUu8KBVJaEMtTJ-2-Dyq_M5DyDsB2Pkai4TAACdUCJ0XB1O_PdwGDUQS20xriErgJ9wcW7jjo8QXX5t7Ymd4DpAR9-npusYJIz2xq0=w1280" alt="ภาพบรรยากาศสำนักสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQXGL01N7tLs715X7m1qYfzWnIO24UG-ZvBT-IxjaVT7Io4tJiTRCIJCswRjg0h3OCZvTZpvqSFx8-2pk3V8liSS2AJwP_KJ-Kw64ygVTQSj6Jx23AW8SzcWEHbGY_HzTHe408KSpXTfop_20gpjAAR5L0E6CumHX11IszG4ZZ9DGau9FHaYVttpJNNXEDK_oNiI3KLMRBRAaP1I=w1280" alt="ภาพสถานที่ปฏิบัติธรรมสาขานครสวรรค์"></figure>
+            <figure class="album-slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/sitesv/AG8ngQV3aQ1zIJs3nFczsvH_4oGhRBcjMsxumgFbt0kJMwk2R6caLUXk2ctbT6Nsmhhk3eDE0cXcqAUB9tOf5ntwsG3DVwF35bncc_qr4talJQnh1mEZDtOlH2PhFqO2wD8suDBIM_1BcLIQdtVHXJJPY6Y3urw7JuL9dR73NcfNxzAp7i3Sf50KoQAyZY2ZwUyVYV_UOwPLFj-heDYqE5E=w1280" alt="ภาพบรรยากาศคอร์สกรรมฐานวัดทุ่งหินเทิน"></figure>
+          </div>
         </div>
       </div>
     </section>
@@ -1427,16 +1744,16 @@
     <section id="register">
       <div class="container register-grid">
         <aside class="info-card" style="width: 100%;">
-          <h2>ติดต่อสอบถามตารางสาขา</h2>
-          <p>คอร์สสาขาจัดสับเปลี่ยนหมุนเวียน หากต้องการทราบรอบล่าสุด หรือวิธีสมัคร กรุณาติดต่อเจ้าหน้าที่สถาบันวิปัสสนาวิชชาลัย</p>
-          <div class="contact-box">0814432630, 0809071543</div>
+          <h2>ติดต่อสอบถามสาขานครสวรรค์</h2>
+          <p>สอบถามได้ที่กลุ่ม LINE ของคอร์ส หรือพี่เลี้ยงประจำคอร์ส หากพบปัญหาการสมัครสมาชิกเว็บไซต์หรือการสมัครคอร์ส ติดต่อเจ้าหน้าที่สถาบันฯ</p>
+          <div class="contact-box">พี่เลี้ยง 081-912-9219 · สถาบันฯ 080-907-1543, 081-443-2630</div>
           <div class="actions">
-            <a class="btn btn-primary" href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer">
-              ติดต่อสอบถามทาง LINE
+            <a class="btn btn-primary" href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" target="_blank" rel="noopener noreferrer">
+              เข้ากลุ่ม LINE สอบถาม
               <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-secondary" href="/">
-              กลับหน้ารวมคอร์ส
+            <a class="btn btn-secondary" href="/courses/Branch">
+              กลับหน้ารวมสาขา
               <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             </a>
           </div>
@@ -1452,11 +1769,11 @@
         <p>จัดทำโดยสถาบันวิปัสสนาวิชชาลัย วัดมเหยงคณ์ พระนครศรีอยุธยา</p>
         <div class="contact-detail">
           <span>เบอร์โทร: 080-907-1543, 081-443-2630</span>
-          <span>LINE ID: <a rel="noopener noreferrer" target="_blank" href="https://lin.ee/nsQedve" style="color: var(--leaf);">@vi22</a> (สถาบันวิปัสสนาวิชชาลัย)</span>
+          <span>LINE: <a rel="noopener noreferrer" target="_blank" href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" style="color: var(--leaf);">กลุ่ม LINE สาขานครสวรรค์</a></span>
         </div>
         <div style="margin-top: 18px; font-size: 0.92rem; color: var(--muted); font-weight: 600;">ติดตามข่าวสารของสถาบันฯ ได้ที่</div>
         <div class="footer-socials" style="margin-top: 8px;">
-          <a href="https://lin.ee/nsQedve" target="_blank" rel="noopener noreferrer" class="social-btn line" aria-label="LINE Official Account">
+          <a href="https://line.me/ti/g2/5yppmGnVZo_tCdSjKqnYFivSZ6eQa7i9itvzEQ" target="_blank" rel="noopener noreferrer" class="social-btn line" aria-label="กลุ่ม LINE สาขานครสวรรค์">
             <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.564.39.085.922.258 1.058.595.122.303.08.778.039 1.084l-.171 1.037c-.053.303-.251 1.192.109 1.3.361.109.978-.508 1.399-.926 1.644-1.632 2.651-2.476 3.666-3.799 4.356-.814 6.814-4.521 6.814-8.629zm-16.14 2.766h-1.425a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39H7.86c.215 0 .39.175.39.39v3.941a.39.39 0 0 1-.39.39zm3.023-.39a.39.39 0 0 1-.39.39h-.645a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h.645a.39.39 0 0 1 .39.39v4.726zm4.845 0a.39.39 0 0 1-.39.39H14.19a.39.39 0 0 1-.303-.146L12.046 9.94v2.74a.39.39 0 0 1-.39.39h-.64a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h1.139c.092 0 .18.032.25.09l1.859 2.215V7.954a.39.39 0 0 1 .39-.39h.64a.39.39 0 0 1 .39.39v4.726zm3.923-2.18h-.947v.9h1.372a.39.39 0 0 1 .39.39v.502a.39.39 0 0 1-.39.39H18.26a.39.39 0 0 1-.39-.39V7.954a.39.39 0 0 1 .39-.39h2.023c.215 0 .39.175.39.39v.502a.39.39 0 0 1-.39.39h-1.372v.901h.947c.215 0 .39.175.39.39v.502a.39.39 0 0 1-.39.39z"/></svg>
           </a>
           <a href="https://www.facebook.com/vippasanavitchalai" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook Page">
@@ -1526,6 +1843,48 @@
         d.classList.remove('open');
       });
     });
+
+    const clampMedia = window.matchMedia('(max-width: 940px)');
+
+    function setupClampedText() {
+      document.querySelectorAll('.clamp-text').forEach((text) => {
+        const button = text.parentElement.querySelector(':scope > .read-more');
+        if (!button) return;
+
+        const collapse = () => {
+          text.classList.remove('is-expanded');
+          text.classList.add('is-clamped');
+          button.textContent = 'อ่านเพิ่มเติม';
+          button.setAttribute('aria-expanded', 'false');
+          requestAnimationFrame(() => {
+            const overflows = text.scrollHeight > text.clientHeight + 2;
+            button.hidden = !overflows;
+            if (!overflows) text.classList.remove('is-clamped');
+          });
+        };
+
+        if (!clampMedia.matches) {
+          text.classList.remove('is-clamped', 'is-expanded');
+          button.hidden = true;
+          return;
+        }
+
+        if (!button.dataset.bound) {
+          button.dataset.bound = 'true';
+          button.addEventListener('click', () => {
+            const expanded = text.classList.toggle('is-expanded');
+            text.classList.toggle('is-clamped', !expanded);
+            button.textContent = expanded ? 'ย่อข้อความ' : 'อ่านเพิ่มเติม';
+            button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          });
+        }
+
+        collapse();
+      });
+    }
+
+    setupClampedText();
+    clampMedia.addEventListener('change', setupClampedText);
   </script>
 </body>
 </html>
