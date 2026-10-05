@@ -438,6 +438,113 @@
       line-height: 1.6;
     }
 
+    .online-schedule {
+      margin-top: 34px;
+      padding: 28px 16px 18px;
+      border: 1px solid rgba(122, 90, 44, .16);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(201, 166, 107, .22), transparent 14rem),
+        radial-gradient(circle at 88% 8%, rgba(201, 166, 107, .16), transparent 12rem),
+        linear-gradient(180deg, #fffdf8 0%, #f8f1e4 100%);
+      box-shadow: 0 18px 40px -28px rgba(74, 40, 12, .55);
+    }
+
+    .online-schedule-banner {
+      max-width: 680px;
+      margin: 0 auto 18px;
+      padding: 16px 22px 14px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #9b6734 0%, #7d4e24 100%);
+      color: #fffaf3;
+      text-align: center;
+      box-shadow:
+        0 0 0 3px #f6ead6,
+        0 0 0 5px #8a5a2b,
+        0 12px 24px -16px rgba(74, 40, 12, .8);
+    }
+
+    .online-schedule-banner h2 {
+      margin: 0;
+      color: #fffaf3;
+      font-size: clamp(1.12rem, 2.5vw, 1.48rem);
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .online-schedule-lead {
+      margin: 0 auto 8px;
+      max-width: 640px;
+      text-align: center;
+      color: #4a3018;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .online-schedule-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 4px auto 16px;
+      color: #b08958;
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+    }
+
+    .online-schedule-divider span {
+      color: #c9a66b;
+      letter-spacing: 0;
+      font-size: 1rem;
+    }
+
+    .online-schedule-scroll {
+      overflow-x: auto;
+      border: 1px solid rgba(176, 132, 74, .35);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .online-schedule-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
+    .online-schedule-table th,
+    .online-schedule-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(176, 132, 74, .28);
+      vertical-align: middle;
+    }
+
+    .online-schedule-table th {
+      background: linear-gradient(180deg, #efd3a4 0%, #e4c48d 100%);
+      color: #5c3b18;
+      font-weight: 800;
+    }
+
+    .online-schedule-table th:first-child,
+    .online-schedule-table td:first-child {
+      width: 18%;
+    }
+
+    .online-schedule-table th:nth-child(2),
+    .online-schedule-table td:nth-child(2) {
+      width: 24%;
+    }
+
+    .online-schedule-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .online-schedule-table tbody tr:nth-child(even) {
+      background: rgba(248, 241, 228, .55);
+    }
+
     .btn {
       min-height: 48px;
       display: inline-flex;
@@ -756,6 +863,67 @@
         grid-template-columns: 1fr;
         gap: 28px;
       }
+
+      .online-schedule {
+        padding: 22px 12px 14px;
+      }
+
+      .online-schedule-banner {
+        padding: 14px 14px 12px;
+      }
+
+      .online-schedule-lead {
+        font-size: 0.95rem;
+      }
+
+      .online-schedule-table {
+        font-size: 0.86rem;
+      }
+
+      .online-schedule-table th,
+      .online-schedule-table td {
+        padding: 10px 8px;
+      }
+
+      .online-schedule-table th:first-child,
+      .online-schedule-table td:first-child,
+      .online-schedule-table th:nth-child(2),
+      .online-schedule-table td:nth-child(2) {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .online-schedule-table thead {
+        display: none;
+      }
+
+      .online-schedule-table,
+      .online-schedule-table tbody,
+      .online-schedule-table tr,
+      .online-schedule-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .online-schedule-table tr {
+        padding: 12px 8px 10px;
+        border-bottom: 1px solid rgba(176, 132, 74, .28);
+      }
+
+      .online-schedule-table td {
+        padding: 1px 6px;
+        border: 0;
+      }
+
+      .online-schedule-table td:first-child {
+        color: #5c3b18;
+        font-weight: 800;
+      }
+
+      .online-schedule-table tbody tr:last-child {
+        border-bottom: none;
+      }
     }
   </style>
 </head>
@@ -937,6 +1105,56 @@
           หากมีข้อสงสัยเกี่ยวกับโครงการกรรมฐานออนไลน์ กรุณาติดต่อ:<br>
           <strong>พี่เลี้ยงลินลี่ โทร. <a href="tel:0874294514" style="color: var(--brown); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--brown);">087-429-4514</a></strong>
         </div>
+
+        <section class="online-schedule" aria-labelledby="online-schedule-title">
+          <div class="online-schedule-banner">
+            <h2 id="online-schedule-title">กำหนดการอบรมวิปัสสนากรรมฐาน<br>คอร์สออนไลน์ ประจำปี ๒๕๗๐</h2>
+          </div>
+          <p class="online-schedule-lead">
+            กรรมฐานออนไลน์ ผ่านแอปพลิเคชัน Zoom<br>
+            สำหรับผู้ปฏิบัติพักอยู่ที่บ้าน<br>
+            ทั้งในประเทศและต่างประเทศ รุ่นระยะเวลา ๗ วัน
+          </p>
+          <div class="online-schedule-divider" aria-hidden="true">······<span>❀</span>······</div>
+          <div class="online-schedule-scroll">
+            <table class="online-schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col">รุ่นที่</th>
+                  <th scope="col">ฐานะผู้สมัคร</th>
+                  <th scope="col">ระหว่างวันที่</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>รุ่นที่ ๖๐</td>
+                  <td>ผู้ปฏิบัติใหม่</td>
+                  <td>วันพฤหัสบดีที่ ๑๑ - วันพฤหัสบดีที่ ๑๘ กุมภาพันธ์ ๒๕๗๐</td>
+                </tr>
+                <tr>
+                  <td>คอร์สพิเศษ</td>
+                  <td>โรงเรียนสยามสามไตร</td>
+                  <td>วันอาทิตย์ที่ ๑๔ - วันพฤหัสบดีที่ ๑๘ มีนาคม ๒๕๗๐</td>
+                </tr>
+                <tr>
+                  <td>รุ่นที่ ๖๑</td>
+                  <td>ผู้ปฏิบัติเก่า</td>
+                  <td>วันจันทร์ที่ ๑๙ - วันจันทร์ที่ ๒๖ เมษายน ๒๕๗๐</td>
+                </tr>
+                <tr>
+                  <td>รุ่นที่ ๖๒</td>
+                  <td>ผู้ปฏิบัติใหม่</td>
+                  <td>วันอังคารที่ ๑๕ - วันอังคารที่ ๒๒ มิถุนายน ๒๕๗๐</td>
+                </tr>
+                <tr>
+                  <td>รุ่นที่ ๖๓</td>
+                  <td>ผู้ปฏิบัติเก่า</td>
+                  <td>วันอังคารที่ ๑๗ - วันอังคารที่ ๒๔ สิงหาคม ๒๕๗๐</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
         
       </div>
     </section>
