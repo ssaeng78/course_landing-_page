@@ -1,9 +1,9 @@
 /* แก้เบอร์สถาบันที่ไฟล์นี้ที่เดียว — ทุกหน้าจะอ่านค่านี้ */
 window.SITE_CONTACT = {
-  institutePhoneDisplay: "080-907-1543, 097-429-8991",
-  institutePhoneCompact: "0974298991, 0809071543",
-  institutePhoneOffice: "080-907-1543",
-  institutePhoneIt: "097-429-8991"
+  institutePhoneDisplay: "081-4432630, 080-9071543",
+  institutePhoneCompact: "0814432630, 0809071543",
+  institutePhoneOffice: "080-9071543",
+  institutePhoneIt: "081-4432630"
 };
 
 (function applySiteContact() {
