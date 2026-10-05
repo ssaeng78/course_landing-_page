@@ -1,6 +1,6 @@
 /* แก้เบอร์สถาบันที่ไฟล์นี้ที่เดียว — ทุกหน้าจะอ่านค่านี้ */
 window.SITE_CONTACT = {
-  institutePhoneDisplay: "081-4432630, 080-9071543",
+  institutePhoneDisplay: "081-4432630/080-9071543",
   institutePhoneCompact: "0814432630, 0809071543",
   institutePhoneOffice: "080-9071543",
   institutePhoneIt: "081-4432630"
