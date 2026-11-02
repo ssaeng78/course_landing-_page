@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lesson 0001: Clear AI Requests</title>
+    <link rel="stylesheet" href="../assets/teach.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="eyebrow">Lesson 0001</div>
+        <h1>ขอให้ AI ช่วยเราเป็นภาษาอังกฤษแบบชัด</h1>
+        <p class="lead">เป้าหมายของบทนี้คือเขียน prompt ภาษาอังกฤษสั้นๆ ที่บอก AI ว่าเราต้องการอะไร ทำไปเพื่อใคร และอยากได้คำตอบแบบไหน</p>
+      </header>
+
+      <section>
+        <h2>ทำไมต้องเริ่มจากโครงสร้างนี้</h2>
+        <p>OpenAI แนะนำให้เขียนคำสั่งให้ชัด แยกบริบทและข้อจำกัดออกจากกัน และบอกผลลัพธ์ที่ต้องการให้ตรงงานจริง ส่วน Google Technical Writing เน้นการเขียนให้ผู้อ่านเข้าใจงานเร็ว ซึ่งใช้กับ AI ได้ดีมาก เพราะ AI ก็ต้องการคำสั่งที่ไม่กำกวมเช่นกัน</p>
+        <p>บทนี้ใช้สูตรเดียวก่อน: <a href="../reference/ai-english-request-card.html">Act as + Task + Context + Constraints + Output</a></p>
+      </section>
+
+      <section class="formula">
+        <strong>Prompt formula</strong>
+        <p><code>Act as a [role]. [Task]. Context: [context]. Constraints: [rules]. Output: [format].</code></p>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>1. Act as</h2>
+          <p>บอกบทบาทที่อยากให้ AI รับ เช่น <code>Act as a writing assistant.</code></p>
+        </div>
+        <div class="card">
+          <h2>2. Task</h2>
+          <p>บอกงานเป็นกริยาชัดๆ เช่น <code>Rewrite this caption.</code></p>
+        </div>
+        <div class="card">
+          <h2>3. Context</h2>
+          <p>บอกสถานการณ์ เช่น <code>This is for a Facebook post about an online course.</code></p>
+        </div>
+        <div class="card">
+          <h2>4. Constraints</h2>
+          <p>บอกข้อจำกัด เช่น <code>Use simple English and keep it under 60 words.</code></p>
+        </div>
+        <div class="card">
+          <h2>5. Output</h2>
+          <p>บอกรูปแบบคำตอบ เช่น <code>Give me three versions in a table.</code></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>ตัวอย่างใช้งานจริง</h2>
+        <div class="practice">
+          <p><strong>Thai intention:</strong> ช่วยแก้แคปชันภาษาอังกฤษสำหรับโพสต์ขายคอร์ส ให้สั้น อ่านง่าย และมี 3 ตัวเลือก</p>
+          <pre class="answer">Act as a writing assistant.
+Rewrite this caption for a Facebook post about an online course.
+Context: The audience is busy beginners who want practical lessons.
+Constraints: Use simple English. Keep each version under 40 words.
+Output: Give me three versions in a table.</pre>
+        </div>
+      </section>
+
+      <section class="quiz" data-quiz data-answer="b">
+        <h2>Quiz: จากความจำ</h2>
+        <p>ข้อไหนเป็น prompt ที่ชัดที่สุดสำหรับขอให้ AI ช่วยเขียนข้อความงานออนไลน์?</p>
+        <div class="choices">
+          <button class="choice" data-value="a">Write better English for me.</button>
+          <button class="choice" data-value="b">Rewrite this email for a client. Use simple English. Give me two polite versions.</button>
+          <button class="choice" data-value="c">Make it nice and professional.</button>
+        </div>
+        <div class="feedback" aria-live="polite"></div>
+      </section>
+
+      <section class="practice">
+        <h2>ฝึกทันที</h2>
+        <p>เขียน prompt ภาษาอังกฤษของคุณเองจากสถานการณ์นี้: “ให้ AI ช่วยสรุปหน้าเว็บภาษาอังกฤษ แล้วบอกว่าต้องทำอะไรต่อ”</p>
+        <textarea aria-label="Write your English prompt here" placeholder="Act as..."></textarea>
+        <p>เสร็จแล้วส่ง prompt นี้กลับมาให้ผมตรวจได้ ผมจะช่วยแก้ให้เป็นธรรมชาติขึ้น</p>
+      </section>
+
+      <footer>
+        Primary sources:
+        <a href="https://developers.openai.com/api/docs/guides/prompt-engineering">OpenAI prompt engineering</a>,
+        <a href="https://developers.google.com/tech-writing">Google Technical Writing</a>,
+        <a href="https://digital.gov/guides/plain-language">Digital.gov plain language</a>.
+      </footer>
+    </main>
+    <script src="../assets/quiz.js"></script>
+  </body>
+</html>
